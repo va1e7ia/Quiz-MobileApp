@@ -31,7 +31,10 @@
         android:layout_below="@+id/quizLogo"
         android:text="Choose quiz"/>
 
+    <!--start of first line-->
     <LinearLayout
+
+        android:id="@+id/line_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -41,6 +44,7 @@
         android:layout_marginEnd="20dp"
         android:weightSum="2">
 
+        <!--start of TVD-->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -63,7 +67,115 @@
                 android:text="The Vampire Diaries"/>
 
         </LinearLayout>
+        <!--end of TVD-->
+
+        <!--start of ST-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:background="@drawable/round_back_white10">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tvd"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Stranger Things"/>
+
+        </LinearLayout>
+        <!--end of ST-->
     </LinearLayout>
+    <!--end of first line-->
+
+    <!--start of second line-->
+    <LinearLayout
+        android:id="@+id/line_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/line_1"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:weightSum="2">
+
+        <!--start of SH-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:background="@drawable/round_back_white10">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tvd"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Sherlock Holmes"/>
+
+        </LinearLayout>
+        <!--end of SH-->
+
+        <!--start of Luci-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:background="@drawable/round_back_white10">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tvd"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Lucifer"/>
+
+        </LinearLayout>
+        <!--end of Luci-->
+    </LinearLayout>
+    <!--end of second line-->
+
+    <!--start button Start-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="START QUIZ"
+        android:layout_below="@id/line_2"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/round_backgreen20"/>
+    <!--end button Start-->
+
 
 
 </RelativeLayout>
