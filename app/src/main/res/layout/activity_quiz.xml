@@ -23,7 +23,7 @@
         android:src="@drawable/left_arrow"
         android:layout_centerVertical="true"
         android:layout_marginStart="15dp"
-        />
+        app:tint="@android:color/white" />
 
         <!--ВЫБРАННАЯ ТЕМА -->
         <TextView
@@ -46,12 +46,14 @@
             android:layout_marginEnd="15dp"
             android:gravity="center"
             android:orientation="horizontal"
+
             >
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/timer"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginEnd="15dp"
+                app:tint="@android:color/white" />
             <TextView
                 android:id="@+id/timer"
                 android:layout_width="wrap_content"
@@ -154,7 +156,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_back_green"
-        android:text="next"
+        android:text="@string/next_question"
         android:textColor="#000000"
         />
 

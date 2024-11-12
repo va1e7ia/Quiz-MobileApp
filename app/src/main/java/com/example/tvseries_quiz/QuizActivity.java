@@ -2,7 +2,9 @@ package com.example.tvseries_quiz;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,13 +23,14 @@ import java.util.TimerTask;
 
 public class QuizActivity extends AppCompatActivity {
 
+    MediaPlayer mediaPlayerChoose, mediaPlayerFail, mediaPlayerNext, mediaPlayerBack, mediaPlayerRight;
     private TextView questions;
     private TextView question;
 
     private AppCompatButton option1, option2, option3, option4;
     private AppCompatButton nextBtn;
 
-    private Timer quizTimer;
+    private CountDownTimer quizTimer;
 
     private int seconds = 0;
     private int totalTimeInMins = 1;
@@ -52,6 +55,12 @@ public class QuizActivity extends AppCompatActivity {
         final ImageView backBtn = findViewById(R.id.backBtn);
         final TextView timer = findViewById(R.id.timer);
         final TextView selectedTopicName = findViewById(R.id.selectedTopicName);
+
+        mediaPlayerChoose=  MediaPlayer.create(this, R.raw.sound_choose);
+        mediaPlayerFail =  MediaPlayer.create(this, R.raw.sound_fail);
+        mediaPlayerNext =  MediaPlayer.create(this, R.raw.sound_next);
+        mediaPlayerBack =  MediaPlayer.create(this, R.raw.sound_back);
+        mediaPlayerRight =  MediaPlayer.create(this, R.raw.sound_right);
 
         questions = findViewById(R.id.questions);
         question = findViewById(R.id.question);
@@ -80,9 +89,8 @@ public class QuizActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                quizTimer.purge();
                 quizTimer.cancel();
-
+                mediaPlayerBack.start();
                 startActivity(new Intent(QuizActivity.this, MainActivity.class));
                 finish();
             }
@@ -96,9 +104,9 @@ public class QuizActivity extends AppCompatActivity {
                     selectedOptionByUser = option1.getText().toString();
                     option1.setBackgroundResource(R.drawable.round_back_red);
                     option1.setTextColor(Color.WHITE);
-
                     revealAnswer();
                     questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                    soundForAnswerOption(selectedOptionByUser);
                 }
 
             }
@@ -112,7 +120,7 @@ public class QuizActivity extends AppCompatActivity {
                     selectedOptionByUser = option2.getText().toString();
                     option2.setBackgroundResource(R.drawable.round_back_red);
                     option2.setTextColor(Color.WHITE);
-
+                    soundForAnswerOption(selectedOptionByUser);
                     revealAnswer();
                     questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
                 }
@@ -128,7 +136,7 @@ public class QuizActivity extends AppCompatActivity {
                     selectedOptionByUser = option3.getText().toString();
                     option3.setBackgroundResource(R.drawable.round_back_red);
                     option3.setTextColor(Color.WHITE);
-
+                    soundForAnswerOption(selectedOptionByUser);
                     revealAnswer();
                     questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
                 }
@@ -144,7 +152,7 @@ public class QuizActivity extends AppCompatActivity {
                     selectedOptionByUser = option4.getText().toString();
                     option4.setBackgroundResource(R.drawable.round_back_red);
                     option4.setTextColor(Color.WHITE);
-
+                    soundForAnswerOption(selectedOptionByUser);
                     revealAnswer();
                     questionsLists.get(currentQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
                 }
@@ -157,8 +165,10 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(selectedOptionByUser.isEmpty()){
+                    mediaPlayerFail.start();
                     Toast.makeText(QuizActivity.this, "Сделайте выбор", Toast.LENGTH_SHORT).show();
                 } else {
+                    mediaPlayerNext.start();
                     changeNextQuestion();
                 }
 
@@ -167,52 +177,45 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
-    private void startTimer (TextView timerTextView){
+    private void startTimer(final TextView timerTextView) {
+        // Переводим минуты и секунды в миллисекунды для `CountDownTimer`
+        long totalTimeInMillis = (totalTimeInMins * 60 + seconds) * 1000;
 
-        quizTimer = new Timer();
-        quizTimer.scheduleAtFixedRate(new TimerTask() {
+        quizTimer = new CountDownTimer(totalTimeInMillis, 1000) {
             @Override
-            public void run() {
-                if(seconds == 0){
-                    totalTimeInMins--;
-                    seconds = 59;
-                } else if(seconds == 0 && totalTimeInMins == 0){
-                    quizTimer.purge();
-                    quizTimer.cancel();
+            public void onTick(long millisUntilFinished) {
+                // Обновляем оставшиеся минуты и секунды
+                int minutes = (int) (millisUntilFinished / 1000) / 60;
+                int seconds = (int) (millisUntilFinished / 1000) % 60;
 
-                    Toast.makeText(QuizActivity.this, "Время вышло", Toast.LENGTH_SHORT).show();
+                // Форматируем вывод в формате "MM:SS"
+                String finalMinutes = String.valueOf(minutes);
+                String finalSeconds = String.valueOf(seconds);
 
-                    Intent intent = new Intent(QuizActivity.this, QuizResults.class);
-                    intent.putExtra("correct",getCorrectAnswers());
-                    intent.putExtra("incorrect", getInCorrectAnswers());
-
-                    startActivity(intent);
-                    finish();
+                if (finalMinutes.length() == 1) {
+                    finalMinutes = "0" + finalMinutes;
                 }
-                else{
-                    seconds--;
+                if (finalSeconds.length() == 1) {
+                    finalSeconds = "0" + finalSeconds;
                 }
 
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        String finalMinutes = String.valueOf(totalTimeInMins);
-                        String finalSeconds = String.valueOf(seconds);
-
-                        if (finalMinutes.length() == 1){
-                            finalMinutes = "0"+finalMinutes;
-                        }
-
-                        if (finalSeconds.length()==1){
-                            finalSeconds = "0"+finalSeconds;
-                        }
-                        timerTextView.setText(finalMinutes + ":" + finalSeconds);
-                    }
-                });
+                timerTextView.setText(finalMinutes + ":" + finalSeconds);
             }
-        }, 1000, 1000);
+
+            @Override
+            public void onFinish() {
+                Toast.makeText(QuizActivity.this, "Время вышло", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(QuizActivity.this, QuizResults.class);
+                intent.putExtra("correct", getCorrectAnswers());
+                intent.putExtra("incorrect", getInCorrectAnswers());
+
+                startActivity(intent);
+                finish();
+            }
+        }.start();
     }
+
 
     private int getCorrectAnswers (){
 
@@ -285,16 +288,16 @@ public class QuizActivity extends AppCompatActivity {
             selectedOptionByUser = "";
 
             option1.setBackgroundResource(R.drawable.round_back_white);
-            option1.setTextColor(Color.parseColor("#1F6BB8"));
+            option1.setTextColor(Color.parseColor("#000000"));
 
             option2.setBackgroundResource(R.drawable.round_back_white);
-            option2.setTextColor(Color.parseColor("#1F6BB8"));
+            option2.setTextColor(Color.parseColor("#000000"));
 
             option3.setBackgroundResource(R.drawable.round_back_white);
-            option3.setTextColor(Color.parseColor("#1F6BB8"));
+            option3.setTextColor(Color.parseColor("#000000"));
 
             option4.setBackgroundResource(R.drawable.round_back_white);
-            option4.setTextColor(Color.parseColor("#1F6BB8"));
+            option4.setTextColor(Color.parseColor("#000000"));
 
             questions.setText((currentQuestionPosition+1)+"/"+questionsLists.size());
             question.setText(questionsLists.get(currentQuestionPosition).getQuestion());
@@ -311,6 +314,17 @@ public class QuizActivity extends AppCompatActivity {
 
             startActivity(intent);
             finish();
+        }
+    }
+
+    private void soundForAnswerOption(String selectedOptionByUser){
+
+        final String getAnswer = questionsLists.get(currentQuestionPosition).getAnswer();
+
+        if(selectedOptionByUser.equals(getAnswer)){
+            mediaPlayerRight.start();
+        } else {
+            mediaPlayerFail.start();
         }
     }
 //    @Override

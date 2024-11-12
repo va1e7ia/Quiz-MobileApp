@@ -1,6 +1,7 @@
 package com.example.tvseries_quiz;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    MediaPlayer mediaPlayerChoose, mediaPlayerFail, mediaPlayerNext;
+
+
     private String selectedTopic = "";
 
 
@@ -28,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        mediaPlayerChoose = MediaPlayer.create(this, R.raw.sound_choose);
+        mediaPlayerFail=MediaPlayer.create(this, R.raw.sound_fail);
+        mediaPlayerNext=MediaPlayer.create(this, R.raw.sound_next);
+
         final LinearLayout generalErudition = findViewById(R.id.generalEruditionLayout);
         final LinearLayout film = findViewById(R.id.filmLayout);
         final LinearLayout music = findViewById(R.id.musicLayout);
@@ -40,14 +49,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedTopic = "generalErudition";
+                selectedTopic = "Общая эрудиция";
                 generalErudition.setBackgroundResource(R.drawable.round_back_white_stroke);
 
                 film.setBackgroundResource(R.drawable.round_back_white);
                 music.setBackgroundResource(R.drawable.round_back_white);
                 geography.setBackgroundResource(R.drawable.round_back_white);
 
-
+                mediaPlayerChoose.start();
             }
         });
 
@@ -56,12 +65,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedTopic = "film";
+                selectedTopic = "Кино и телевидение";
                 film.setBackgroundResource(R.drawable.round_back_white_stroke);
 
                 generalErudition.setBackgroundResource(R.drawable.round_back_white);
                 music.setBackgroundResource(R.drawable.round_back_white);
                 geography.setBackgroundResource(R.drawable.round_back_white);
+                mediaPlayerChoose.start();
 
             }
         });
@@ -71,12 +81,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedTopic = "music";
+                selectedTopic = "Музыка";
                 music.setBackgroundResource(R.drawable.round_back_white_stroke);
 
                 generalErudition.setBackgroundResource(R.drawable.round_back_white);
                 film.setBackgroundResource(R.drawable.round_back_white);
                 geography.setBackgroundResource(R.drawable.round_back_white);
+                mediaPlayerChoose.start();
 
             }
         });
@@ -86,12 +97,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                selectedTopic = "geography";
+                selectedTopic = "География";
                 geography.setBackgroundResource(R.drawable.round_back_white_stroke);
 
                 generalErudition.setBackgroundResource(R.drawable.round_back_white);
                 film.setBackgroundResource(R.drawable.round_back_white);
                 music.setBackgroundResource(R.drawable.round_back_white);
+                mediaPlayerChoose.start();
 
             }
         });
@@ -101,9 +113,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (selectedTopic.isEmpty()) {
+                    mediaPlayerFail.start();
                     Toast.makeText(MainActivity.this, "Выберите викторину", Toast.LENGTH_SHORT).show();
                 } else {
-
+                    mediaPlayerNext.start();
                     Intent intent = new Intent(MainActivity.this, QuizActivity.class);
                     intent.putExtra("selectedTopic", selectedTopic);
                     startActivity(intent);

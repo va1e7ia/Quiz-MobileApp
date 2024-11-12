@@ -31,7 +31,7 @@
         android:layout_marginTop="-40dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="20dp"
-        android:text="Выберите викторину:"
+        android:text="@string/choose_quiz"
         />
 
     <!--НАЧАЛО ПЕРВОЙ ЛИНИИ -->
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Общая эрудиция"
+                android:text="@string/general_erudition"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Кино и телевидение"
+                android:text="@string/film"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -137,7 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Музыка"
+                android:text="@string/music"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -164,7 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="География"
+                android:text="@string/geography"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -177,7 +177,7 @@
         android:id="@+id/startQuizBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Начать викторину"
+        android:text="@string/start_quiz"
         android:layout_below="@id/line_2"
         android:layout_marginTop="25dp"
         android:layout_marginStart="20dp"
