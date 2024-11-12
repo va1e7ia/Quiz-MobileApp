@@ -15,9 +15,9 @@
         android:id="@+id/quizIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
         android:adjustViewBounds="true"
         android:src="@drawable/quiz" />
 
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/quizIcon"
         android:textColor="#99FFFFFF"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="-40dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="20dp"
         android:text="Выберите викторину:"
@@ -182,7 +182,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:textColor="#FFFFFF"
+        android:textColor="#CC000000"
         android:textStyle="bold"
         android:textSize="16sp"
         android:background="@drawable/round_back_green"/>
