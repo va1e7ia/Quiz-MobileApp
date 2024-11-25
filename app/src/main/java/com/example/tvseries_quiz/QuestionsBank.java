@@ -239,9 +239,9 @@ public class QuestionsBank {
 
     public static List<QuestionsList> qetQuestions (String selectedTopicName){
         switch(selectedTopicName){
-            case "generalErudition": return generalEruditionQuestions();
-            case "film": return filmQuestions();
-            case "music": return musicQuestions();
+            case "Общая эрудиция": return generalEruditionQuestions();
+            case "Кино и телевидение": return filmQuestions();
+            case "Музыка": return musicQuestions();
             default: return geographyQuestions();
         }
     }
