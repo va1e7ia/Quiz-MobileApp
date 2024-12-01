@@ -10,7 +10,18 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
+
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"/>
+
     <!--ИЗОБРАЖЕНИЕ ВИКТОРИНЫ -->
+
+
+
     <ImageView
         android:id="@+id/quizIcon"
         android:layout_width="wrap_content"
