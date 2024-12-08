@@ -1,5 +1,7 @@
 package com.example.tvseries_quiz;
 
+import android.content.res.Resources;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,7 @@ public class QuestionsBank {
 
         final List<QuestionsList> questionsList = new ArrayList<>();
 
-        final QuestionsList question1 = new QuestionsList(  "Какие из этих фактов о животных являются верными?",
+        final QuestionsList question1 = new QuestionsList(  "Какие из этих фактов о животных являются верными?(2 варианта)",
                 "Дельфины спят с одним открытым глазом", "Тигры не умеют рычать", "Слоны имеют по шесть зубов", "Пауки могут прыгать",
                 "Дельфины спят с одним открытым глазом, Пауки могут прыгать", true );
 
@@ -25,17 +27,17 @@ public class QuestionsBank {
                 "Кремль", "Школу", "Княжеский терем", "Монастырь",
                 "Кремль", false);
 
-        final QuestionsList question5 = new QuestionsList("Как называли строителя в старину?",
-                "Бондарь", "Бортник", "Зодчий", "Кормчий",
-                "Зодчий", false);
+        final QuestionsList question5 = new QuestionsList("Какие планеты являются газовыми гигантами?(2 варианта)",
+                "Меркурий", "Юпитер", "Сатурн", "Марс",
+                "Юпитер, Сатурн", true);
 
         final QuestionsList question6 = new QuestionsList("Продолжите пословицу: «Знает кошка…»",
                 "«Да мыши не знают»", "«Почем фунт лиха»", "«Где собака зарыта»", "«Чье мясо съела»",
                 "«Чье мясо съела»", false);
 
-        final QuestionsList question7 = new QuestionsList("Какое из этих растений — плотоядное?",
-                "Володушка", "Росянка", "Мытник", "Астрагал",
-                "Росянка", false);
+        final QuestionsList question7 = new QuestionsList("Какие из этих элементы входят в состав воды?(2 варианта)",
+                "Кислород", "Азот", "Водород", "Углекислый газ",
+                "Кислород, Водород", true);
 
         final QuestionsList question8 = new QuestionsList("Как называется человек, покоряющий крыши многоэтажных домов?",
                 "Диггер", "Сталкер", "Руфер", "Байкер",
@@ -79,9 +81,10 @@ public class QuestionsBank {
                 "\"Друзья\"", "\"Как я встретил вашу маму\"", "\"Секс в большом городе\"", "\"Семейные узы\"",
                 "\"Друзья\"", false);
 
-        final QuestionsList question4 = new QuestionsList("Какой фильм получил Оскар за лучший фильм в 2020 году?",
-                "\"1917\"", "\"Паразиты\"", "\"Джокер\"", "\"Ford против Ferrari\"",
-                "\"Паразиты\"", false);
+        final QuestionsList question4 = new QuestionsList("Какие из этих актеры снимались в фильмах о Джеймсе Бонде?(2 варианта)",
+                "Шон Коннери", "Пирс Броснан", "Дэниел Крейг", "Кристоф Вальц",
+                "Шон Коннери, Пирс Броснан", true);
+
 
         final QuestionsList question5 = new QuestionsList("Какой фильм о вампирах, вышедший в 1994 году, был снят по роману Энн Райс?",
                 "\"Сумерки\"", "\"Интервью с вампиром\"", "\"Дракула\"", "\"Вампиры\"",

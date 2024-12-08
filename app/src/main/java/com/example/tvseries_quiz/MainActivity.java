@@ -3,15 +3,13 @@ package com.example.tvseries_quiz;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -20,20 +18,20 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+//import androidx.annotation.NonNull;
+//import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.database.DataSnapshot;
+//import com.google.firebase.database.DatabaseError;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.ValueEventListener;
+//import android.widget.TextView;
+//import android.util.Log;
+//import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mediaPlayerChoose, mediaPlayerFail, mediaPlayerNext;
-
-
-    private Button logoutBtn; // Кнопка для выхода
-
 
     private String selectedTopic = "";
 
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        //FirebaseApp.initializeApp(this);
+        FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -50,24 +48,19 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //ПЕРЕХОД НА ЭКРАН ЛОГИНА ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ АВТОРИЗОВАН
         if(FirebaseAuth.getInstance().getCurrentUser()==null){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
 
 
-        logoutBtn = findViewById(R.id.logoutBtn); // Инициализация кнопки выхода
+        // КНОПКА ВЫХОДА ИЗ АККАУНТА
+        Button logoutBtn = findViewById(R.id.logoutBtn);
 
-
-
-
-
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        logoutBtn.setOnClickListener(v -> {
                 FirebaseAuth.getInstance().signOut(); // Выход из текущей сессии
                 startActivity(new Intent(MainActivity.this, LoginActivity.class)); // Переход на экран логина
                 finish(); // Закрытие MainActivity
-            }
         });
 
         mediaPlayerChoose = MediaPlayer.create(this, R.raw.sound_choose);
@@ -82,10 +75,7 @@ public class MainActivity extends AppCompatActivity {
         final Button startQuizBtn = findViewById(R.id.startQuizBtn);
 
         //НАЖАТИЕ НА ОБЩУЮ ЭРУДИЦИЮ
-        generalErudition.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+        generalErudition.setOnClickListener(v -> {
                 selectedTopic = "Общая эрудиция";
                 generalErudition.setBackgroundResource(R.drawable.round_back_white_stroke);
 
@@ -94,14 +84,10 @@ public class MainActivity extends AppCompatActivity {
                 geography.setBackgroundResource(R.drawable.round_back_white);
 
                 mediaPlayerChoose.start();
-            }
         });
 
         //НАЖАТИЕ НА ФИЛЬМ
-        film.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+        film.setOnClickListener(v -> {
                 selectedTopic = "Кино и телевидение";
                 film.setBackgroundResource(R.drawable.round_back_white_stroke);
 
@@ -109,15 +95,10 @@ public class MainActivity extends AppCompatActivity {
                 music.setBackgroundResource(R.drawable.round_back_white);
                 geography.setBackgroundResource(R.drawable.round_back_white);
                 mediaPlayerChoose.start();
-
-            }
         });
 
         //НАЖАТИЕ НА МУЗЫКУ
-        music.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+        music.setOnClickListener(v -> {
                 selectedTopic = "Музыка";
                 music.setBackgroundResource(R.drawable.round_back_white_stroke);
 
@@ -125,15 +106,10 @@ public class MainActivity extends AppCompatActivity {
                 film.setBackgroundResource(R.drawable.round_back_white);
                 geography.setBackgroundResource(R.drawable.round_back_white);
                 mediaPlayerChoose.start();
-
-            }
         });
 
         //НАЖАТИЕ НА ГЕОГРАФИЮ
-        geography.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+        geography.setOnClickListener(v -> {
                 selectedTopic = "География";
                 geography.setBackgroundResource(R.drawable.round_back_white_stroke);
 
@@ -141,13 +117,9 @@ public class MainActivity extends AppCompatActivity {
                 film.setBackgroundResource(R.drawable.round_back_white);
                 music.setBackgroundResource(R.drawable.round_back_white);
                 mediaPlayerChoose.start();
-
-            }
         });
 
-        startQuizBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        startQuizBtn.setOnClickListener(v -> {
 
                 if (selectedTopic.isEmpty()) {
                     mediaPlayerFail.start();
@@ -159,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-            }
         });
     }
 }

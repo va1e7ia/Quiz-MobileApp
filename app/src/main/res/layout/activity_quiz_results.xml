@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -17,6 +16,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginTop="-50dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/quiz_icon_description"
         android:src="@drawable/quiz"
         />
 
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:text="Количество правильных ответов:"
+            android:text="@string/correct_answers"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="Количество неправильных ответов:"
+            android:text="@string/incorrect_answers"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />

@@ -1,0 +1,8 @@
+<resources>
+    <string name="question1">Какие из этих фактов о животных являются верными?(2 варианта)</string>
+    <string name="question1_option1">Дельфины спят с одним открытым глазом</string>
+    <string name="question1_option2">Тигры не умеют рычать</string>
+    <string name="question1_option3">Слоны имеют по шесть зубов</string>
+    <string name="question1_option4">Пауки могут прыгать</string>
+    <string name="question1_answer">Дельфины спят с одним открытым глазом, Пауки могут прыгать</string>
+</resources>

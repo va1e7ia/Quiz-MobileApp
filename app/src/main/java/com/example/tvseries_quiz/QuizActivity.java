@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.CountDownTimer;
+
 import android.util.Log;
-import android.view.View;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,23 +19,27 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+//import android.os.CountDownTimer;
+//import java.util.Arrays;
+//import android.view.View;
 
 public class QuizActivity extends AppCompatActivity {
 
     MediaPlayer mediaPlayerChoose, mediaPlayerFail, mediaPlayerNext, mediaPlayerBack, mediaPlayerRight;
     private TextView questions, question;
-    private AppCompatButton option1, option2, option3, option4, nextBtn;
-    private CountDownTimer quizTimer;
-    private int seconds = 0;
-    private int totalTimeInMins = 1;
+    private AppCompatButton option1, option2, option3, option4;
+//    private CountDownTimer quizTimer;
+//    private int seconds = 0;
+//    private int totalTimeInMins = 1;
 
     private List<QuestionsList> questionsLists;
     private int currentQuestionPosition = 0;
-    private List<String> selectedOptionsByUser = new ArrayList<>();
+    private final List<String> selectedOptionsByUser = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +54,7 @@ public class QuizActivity extends AppCompatActivity {
         });
 
         final ImageView backBtn = findViewById(R.id.backBtn);
-        final TextView timer = findViewById(R.id.timer);
+        //final TextView timer = findViewById(R.id.timer);
         final TextView selectedTopicName = findViewById(R.id.selectedTopicName);
 
         mediaPlayerChoose = MediaPlayer.create(this, R.raw.sound_choose);
@@ -59,17 +63,21 @@ public class QuizActivity extends AppCompatActivity {
         mediaPlayerBack = MediaPlayer.create(this, R.raw.sound_back);
         mediaPlayerRight = MediaPlayer.create(this, R.raw.sound_right);
 
+
+
         questions = findViewById(R.id.questions);
         question = findViewById(R.id.question);
         option1 = findViewById(R.id.option1);
         option2 = findViewById(R.id.option2);
         option3 = findViewById(R.id.option3);
         option4 = findViewById(R.id.option4);
-        nextBtn = findViewById(R.id.nextBtn);
+        AppCompatButton nextBtn = findViewById(R.id.nextBtn);
+
 
         final String getSelectedTopic = getIntent().getStringExtra("selectedTopic");
         selectedTopicName.setText(getSelectedTopic);
 
+        assert getSelectedTopic != null;
         questionsLists = QuestionsBank.qetQuestions(getSelectedTopic);
 
 
@@ -77,7 +85,7 @@ public class QuizActivity extends AppCompatActivity {
         loadQuestion();
 
         backBtn.setOnClickListener(v -> {
-            quizTimer.cancel();
+            //quizTimer.cancel();
             mediaPlayerBack.start();
             startActivity(new Intent(QuizActivity.this, MainActivity.class));
             finish();
@@ -108,7 +116,8 @@ public class QuizActivity extends AppCompatActivity {
 
         selectedOptionsByUser.clear();
 
-        questions.setText((currentQuestionPosition + 1) + "/" + questionsLists.size());
+        String questionText = getString(R.string.question_display, currentQuestionPosition + 1, questionsLists.size());
+        questions.setText(questionText);
         question.setText(currentQuestion.getQuestion());
         option1.setText(currentQuestion.getOption1());
         option2.setText(currentQuestion.getOption2());
@@ -131,7 +140,7 @@ public class QuizActivity extends AppCompatActivity {
             } else {
                 // Добавляем вариант в список выбранных
                 selectedOptionsByUser.add(selectedOption);
-                option.setBackgroundResource(R.drawable.round_back_red);
+                option.setBackgroundResource(R.drawable.round_back_green10);
                 option.setTextColor(Color.WHITE);
             }
         } else {
@@ -235,12 +244,6 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
     private void changeNextQuestion() {
         currentQuestionPosition++;
         if (currentQuestionPosition < questionsLists.size()) {
@@ -291,8 +294,6 @@ public class QuizActivity extends AppCompatActivity {
         }
         return correctAnswers;
     }
-
-
 
     private int getInCorrectAnswers() {
         return questionsLists.size() - getCorrectAnswers();

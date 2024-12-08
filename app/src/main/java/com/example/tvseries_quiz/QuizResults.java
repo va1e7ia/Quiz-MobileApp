@@ -3,7 +3,6 @@ package com.example.tvseries_quiz;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -37,23 +36,14 @@ public class QuizResults extends AppCompatActivity {
         final int getCorrectAnswers = getIntent().getIntExtra("correct", 0);
         final int getInCorrectAnswers = getIntent().getIntExtra("incorrect", 0);
 
-        correctAnswers.setText(String.valueOf("Количество правильных ответов: "+getCorrectAnswers));
-        inCorrectAnswers.setText(String.valueOf("Количество неправильных ответов: "+getInCorrectAnswers));
+        correctAnswers.setText(getString(R.string.correct_answers_display, getCorrectAnswers));
+        inCorrectAnswers.setText(getString(R.string.incorrect_answers_display, getInCorrectAnswers));
 
-        startNewQuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        startNewQuiz.setOnClickListener(v-> {
                 mediaPlayerNext.start();
                 startActivity(new Intent(QuizResults.this, MainActivity.class));
                 finish();
-            }
         });
 
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        startActivity(new Intent(QuizResults.this, MainActivity.class));
-//        finish();
-//    }
 }
