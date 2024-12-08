@@ -32,6 +32,303 @@
 
     <string name="question_display">%1$d/%2$d</string>
 
+<!--    ВОПРОСЫ ПО ОБЩЕЙ ЭРУДИЦИИ-->
+
+    <string name="question1_title">Какие из этих фактов о животных являются верными?(2 варианта)</string>
+    <string name="question1_option1">Дельфины спят с одним открытым глазом</string>
+    <string name="question1_option2">Тигры не умеют рычать</string>
+    <string name="question1_option3">Слоны имеют по шесть зубов</string>
+    <string name="question1_option4">Пауки могут прыгать</string>
+    <string name="question1_correct_answer">Дельфины спят с одним открытым глазом, Пауки могут прыгать</string>
+
+    <string name="question2_title">Какие огурцы сажал на брезентовом поле герой одноименной песни?</string>
+    <string name="question2_option1">Железные</string>
+    <string name="question2_option2">Оловянные</string>
+    <string name="question2_option3">Медные</string>
+    <string name="question2_option4">Алюминиевые</string>
+    <string name="question2_correct_answer">Алюминиевые</string>
+
+    <string name="question3_title">У какого животного самые большие глаза относительно тела?</string>
+    <string name="question3_option1">У лемура</string>
+    <string name="question3_option2">У летучей мыши</string>
+    <string name="question3_option3">У долгопята</string>
+    <string name="question3_option4">У тупайи</string>
+    <string name="question3_correct_answer">У долгопята</string>
+
+    <string name="question4_title">Детинцем на Руси называли...</string>
+    <string name="question4_option1">Кремль</string>
+    <string name="question4_option2">Школу</string>
+    <string name="question4_option3">Княжеский терем</string>
+    <string name="question4_option4">Монастырь</string>
+    <string name="question4_correct_answer">Кремль</string>
+
+    <string name="question5_title">Какие планеты являются газовыми гигантами?(2 варианта)</string>
+    <string name="question5_option1">Меркурий</string>
+    <string name="question5_option2">Юпитер</string>
+    <string name="question5_option3">Сатурн</string>
+    <string name="question5_option4">Марс</string>
+    <string name="question5_correct_answer">Юпитер, Сатурн</string>
+
+    <string name="question6_title">Продолжите пословицу: «Знает кошка…»</string>
+    <string name="question6_option1">«Да мыши не знают»</string>
+    <string name="question6_option2">«Почем фунт лиха»</string>
+    <string name="question6_option3">«Где собака зарыта»</string>
+    <string name="question6_option4">«Чье мясо съела»</string>
+    <string name="question6_correct_answer">«Чье мясо съела»</string>
+
+    <string name="question7_title">Какие из этих элементы входят в состав воды?(2 варианта)</string>
+    <string name="question7_option1">Кислород</string>
+    <string name="question7_option2">Азот</string>
+    <string name="question7_option3">Водород</string>
+    <string name="question7_option4">Углекислый газ</string>
+    <string name="question7_correct_answer">Кислород, Водород</string>
+
+    <string name="question8_title">Как называется человек, покоряющий крыши многоэтажных домов?</string>
+    <string name="question8_option1">Диггер</string>
+    <string name="question8_option2">Сталкер</string>
+    <string name="question8_option3">Руфер</string>
+    <string name="question8_option4">Байкер</string>
+    <string name="question8_correct_answer">Руфер</string>
+
+    <string name="question9_title">Какая пряность по форме напоминает звездочку?</string>
+    <string name="question9_option1">Майоран</string>
+    <string name="question9_option2">Кардамон</string>
+    <string name="question9_option3">Гвоздика</string>
+    <string name="question9_option4">Бадьян</string>
+    <string name="question9_correct_answer">Бадьян</string>
+
+    <string name="question10_title">Сколько лет проходит между ситцевой и золотой свадьбой?</string>
+    <string name="question10_option1">11</string>
+    <string name="question10_option2">19</string>
+    <string name="question10_option3">25</string>
+    <string name="question10_option4">49</string>
+    <string name="question10_correct_answer">49</string>
+
+<!--    =================================================-->
+<!--    ВОПРОСЫ ПО ФИЛЬМАМ-->
+
+    <string name="f_question1_title">Какой фильм стал первым полнометражным анимационным фильмом Disney?</string>
+    <string name="f_question1_option1">"Золушка"</string>
+    <string name="f_question1_option2">"Спящая красавица"</string>
+    <string name="f_question1_option3">"Белоснежка и семь гномов"</string>
+    <string name="f_question1_option4">"Пиноккио"</string>
+    <string name="f_question1_correct_answer">Белоснежка и семь гномов</string>
+
+    <string name="f_question2_title">Какой актер сыграл роль Джеймса Бонда в фильме "Casino Royale" (2006)?</string>
+    <string name="f_question2_option1">Пирс Броснан</string>
+    <string name="f_question2_option2">Дэниел Крейг</string>
+    <string name="f_question2_option3">Шон Коннери</string>
+    <string name="f_question2_option4">Тимоти Далтон</string>
+    <string name="f_question2_correct_answer">Дэниел Крейг</string>
+
+    <string name="f_question3_title">Какой сериал о группе друзей, живущих в Нью-Йорке, стал культовым в 1990-х?</string>
+    <string name="f_question3_option1">"Друзья"</string>
+    <string name="f_question3_option2">"Как я встретил вашу маму"</string>
+    <string name="f_question3_option3">"Секс в большом городе"</string>
+    <string name="f_question3_option4">"Семейные узы"</string>
+    <string name="f_question3_correct_answer">"Друзья"</string>
+
+    <string name="f_question4_title">Какие из этих актеры снимались в фильмах о Джеймсе Бонде?(2 варианта)</string>
+    <string name="f_question4_option1">Шон Коннери</string>
+    <string name="f_question4_option2">Пирс Броснан</string>
+    <string name="f_question4_option3">Дэниел Крейг</string>
+    <string name="f_question4_option4">Кристоф Вальц</string>
+    <string name="f_question4_correct_answer">Шон Коннери, Пирс Броснан</string>
+
+    <string name="f_question5_title">Какой фильм о вампирах, вышедший в 1994 году, был снят по роману Энн Райс?</string>
+    <string name="f_question5_option1">"Сумерки"</string>
+    <string name="f_question5_option2">"Интервью с вампиром"</string>
+    <string name="f_question5_option3">"Дракула"</string>
+    <string name="f_question5_option4">"Вампиры"</string>
+    <string name="f_question5_correct_answer">"Интервью с вампиром"</string>
+
+    <string name="f_question6_title">Как зовут персонажа, которого играет Крис Хемсворт в фильмах Marvel?</string>
+    <string name="f_question6_option1">Тони Старк</string>
+    <string name="f_question6_option2">Капитан Америка</string>
+    <string name="f_question6_option3">Тор</string>
+    <string name="f_question6_option4">Халк</string>
+    <string name="f_question6_correct_answer">Тор</string>
+
+    <string name="f_question7_title">Кто создал знаменитый мультсериал "Симпсоны"?</string>
+    <string name="f_question7_option1">Сет Макфарлейн</string>
+    <string name="f_question7_option2">Мэтт Грейнинг</string>
+    <string name="f_question7_option3">Трей Паркер</string>
+    <string name="f_question7_option4">Дэн Хармона</string>
+    <string name="f_question7_correct_answer">Мэтт Грейнинг</string>
+
+    <string name="f_question8_title">Какой актер сыграл роль Уолтера Уайта в сериале "Во все тяжкие"?</string>
+    <string name="f_question8_option1">Брайан Кранстон</string>
+    <string name="f_question8_option2">Аррон Пол</string>
+    <string name="f_question8_option3">Алек Болдуин</string>
+    <string name="f_question8_option4">Джон Хамм</string>
+    <string name="f_question8_correct_answer">Брайан Кранстон</string>
+
+    <string name="f_question9_title">Какой фильм рассказывает о дружбе между мальчиком и инопланетянином?</string>
+    <string name="f_question9_option1">"Пришельцы"</string>
+    <string name="f_question9_option2">"Супермен"</string>
+    <string name="f_question9_option3">"Э.Т. Инопланетянин"</string>
+    <string name="f_question9_option4">"Контакт"</string>
+    <string name="f_question9_correct_answer">"Э.Т. Инопланетянин"</string>
+
+    <string name="f_question10_title">Какой российский сериал рассказывает о группе заключенных в тюрьме?</string>
+    <string name="f_question10_option1">"Бригада"</string>
+    <string name="f_question10_option2">"Универ"</string>
+    <string name="f_question10_option3">"Закрытая школа"</string>
+    <string name="f_question10_option4">"Операция "Ы" и другие приключения Шурика"</string>
+    <string name="f_question10_correct_answer">"Бригада"</string>
+
+    <!--    =================================================-->
+    <!--    ВОПРОСЫ ПО МУЗЫКЕ-->
+
+    <string name="m_question1_title">Какой британской рок-группы был вокалистом Фредди Меркьюри?</string>
+    <string name="m_question1_option1">The Beatles</string>
+    <string name="m_question1_option2">Led Zeppelin</string>
+    <string name="m_question1_option3">Queen</string>
+    <string name="m_question1_option4">The Rolling Stones</string>
+    <string name="m_question1_correct_answer">Queen</string>
+
+    <string name="m_question2_title">Какой альбом Майкла Джексона стал самым продаваемым альбомом всех времен?</string>
+    <string name="m_question2_option1">"Thriller"</string>
+    <string name="m_question2_option2">"Bad"</string>
+    <string name="m_question2_option3">"Dangerous"</string>
+    <string name="m_question2_option4">"Off the Wall"</string>
+    <string name="m_question2_correct_answer">"Thriller"</string>
+
+    <string name="m_question3_title">Кто написал знаменитую песню "Imagine"?</string>
+    <string name="m_question3_option1">Пол Маккартни</string>
+    <string name="m_question3_option2">Джон Леннон</string>
+    <string name="m_question3_option3">Боб Дилан</string>
+    <string name="m_question3_option4">Элтон Джон</string>
+    <string name="m_question3_correct_answer">Джон Леннон</string>
+
+    <string name="m_question4_title">Какой стиль музыки ассоциируется с городом Новый Орлеан и включает в себя элементы джаза и блюза?</string>
+    <string name="m_question4_option1">Рок</string>
+    <string name="m_question4_option2">Соул</string>
+    <string name="m_question4_option3">Фонк</string>
+    <string name="m_question4_option4">Дикси</string>
+    <string name="m_question4_correct_answer">Дикси</string>
+
+    <string name="m_question5_title">Какая группа выпустила хит "Hotel California"?</string>
+    <string name="m_question5_option1">The Eagles</string>
+    <string name="m_question5_option2">Fleetwood Mac</string>
+    <string name="m_question5_option3">Lynyrd Skynyrd</string>
+    <string name="m_question5_option4">The Doors</string>
+    <string name="m_question5_correct_answer">The Eagles</string>
+
+    <string name="m_question6_title">Какой певец известен как "Король поп-музыки"?</string>
+    <string name="m_question6_option1">Элвис Пресли</string>
+    <string name="m_question6_option2">Майкл Джексон</string>
+    <string name="m_question6_option3">Принс</string>
+    <string name="m_question6_option4">Джастин Тимберлейк</string>
+    <string name="m_question6_correct_answer">Майкл Джексон</string>
+
+    <string name="m_question7_title">Какой музыкальный фестиваль проходит в Гластонбери, Великобритания?</string>
+    <string name="m_question7_option1">Coachella</string>
+    <string name="m_question7_option2">Glastonbury Festival</string>
+    <string name="m_question7_option3">Lollapalooza</string>
+    <string name="m_question7_option4">Woodstock</string>
+    <string name="m_question7_correct_answer">Glastonbury Festival</string>
+
+    <string name="m_question8_title">Какой жанр музыки был популярен в 1980-е годы и включает в себя синтезаторы и электронные инструменты?</string>
+    <string name="m_question8_option1">Хип-хоп</string>
+    <string name="m_question8_option2">Диско</string>
+    <string name="m_question8_option3">Новая волна</string>
+    <string name="m_question8_option4">Гранж</string>
+    <string name="m_question8_correct_answer">Новая волна</string>
+
+    <string name="m_question9_title">Кто из следующего является известным рэп-исполнителем и продюсером, основателем лейбла Roc-A-Fella Records?</string>
+    <string name="m_question9_option1">50 Cent</string>
+    <string name="m_question9_option2">Jay-Z</string>
+    <string name="m_question9_option3">Eminem</string>
+    <string name="m_question9_option4">Snoop Dogg</string>
+    <string name="m_question9_correct_answer">Jay-Z</string>
+
+    <string name="m_question10_title">Какой музыкальный инструмент является символом классической музыки и часто используется в симфонических оркестрах?</string>
+    <string name="m_question10_option1">Гитара</string>
+    <string name="m_question10_option2">Фортепиано</string>
+    <string name="m_question10_option3">Скрипка</string>
+    <string name="m_question10_option4">Ударные</string>
+    <string name="m_question10_correct_answer">Скрипка</string>
+
+    <!--    =================================================-->
+    <!--    ВОПРОСЫ ПО ГЕОГРАФИИ-->
+
+    <string name="g_question1_title">Какой самый большой океан на Земле?</string>
+    <string name="g_question1_option1">Атлантический</string>
+    <string name="g_question1_option2">Индийский</string>
+    <string name="g_question1_option3">Тихий</string>
+    <string name="g_question1_option4">Северный Ледовитый</string>
+    <string name="g_question1_correct_answer">Тихий</string>
+
+    <string name="g_question2_title">В какой стране находится гора Эверест?</string>
+    <string name="g_question2_option1">Индия</string>
+    <string name="g_question2_option2">Непал</string>
+    <string name="g_question2_option3">Китай</string>
+    <string name="g_question2_option4">Бутан</string>
+    <string name="g_question2_correct_answer">Непал</string>
+
+    <string name="g_question3_title">Какой континент является родиной пингвинов?</string>
+    <string name="g_question3_option1">Австралия</string>
+    <string name="g_question3_option2">Антарктида</string>
+    <string name="g_question3_option3">Южная Америка</string>
+    <string name="g_question3_option4">Африка</string>
+    <string name="g_question3_correct_answer">Антарктида</string>
+
+    <string name="g_question4_title">Какое государство имеет наибольшее количество соседей?</string>
+    <string name="g_question4_option1">Россия</string>
+    <string name="g_question4_option2">Бразилия</string>
+    <string name="g_question4_option3">Китай</string>
+    <string name="g_question4_option4">Индия</string>
+    <string name="g_question4_correct_answer">Китай</string>
+
+    <string name="g_question5_title">Какой город является столицей Японии?</string>
+    <string name="g_question5_option1">Осака</string>
+    <string name="g_question5_option2">Токио</string>
+    <string name="g_question5_option3">Киото</string>
+    <string name="g_question5_option4">Хиросима</string>
+    <string name="g_question5_correct_answer">Токио</string>
+
+    <string name="g_question6_title">Какое море считается самым соленым на планете?</string>
+    <string name="g_question6_option1">Красное</string>
+    <string name="g_question6_option2">Балтийское</string>
+    <string name="g_question6_option3">Мертвое</string>
+    <string name="g_question6_option4">Карибское</string>
+    <string name="g_question6_correct_answer">Мертвое</string>
+
+    <string name="g_question7_title">Какой остров крупнейший в мире?</string>
+    <string name="g_question7_option1">Гренландия</string>
+    <string name="g_question7_option2">Новая Гвинея</string>
+    <string name="g_question7_option3">Борнео</string>
+    <string name="g_question7_option4">Мадагаскар</string>
+    <string name="g_question7_correct_answer">Гренландия</string>
+
+    <string name="g_question8_title">Какая река является самой длинной в мире?</string>
+    <string name="g_question8_option1">Нил</string>
+    <string name="g_question8_option2">Амазонка</string>
+    <string name="g_question8_option3">Янцзы</string>
+    <string name="g_question8_option4">Миссисипи</string>
+    <string name="g_question8_correct_answer">Амазонка</string>
+
+    <string name="g_question9_title">Какая пустыня является самой большой в мире?</string>
+    <string name="g_question9_option1">Сахара</string>
+    <string name="g_question9_option2">Гоби</string>
+    <string name="g_question9_option3">Калахари</string>
+    <string name="g_question9_option4">Атакама</string>
+    <string name="g_question9_correct_answer">Сахара</string>
+
+    <string name="g_question10_title">Какой город расположен на двух континентах?</string>
+    <string name="g_question10_option1">Москва</string>
+    <string name="g_question10_option2">Стамбул</string>
+    <string name="g_question10_option3">Каир</string>
+    <string name="g_question10_option4">Тбилиси</string>
+    <string name="g_question10_correct_answer">Стамбул</string>
+
+
+
+
+
+
+
 
 
 

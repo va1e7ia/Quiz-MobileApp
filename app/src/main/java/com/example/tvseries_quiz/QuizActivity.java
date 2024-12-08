@@ -78,7 +78,7 @@ public class QuizActivity extends AppCompatActivity {
         selectedTopicName.setText(getSelectedTopic);
 
         assert getSelectedTopic != null;
-        questionsLists = QuestionsBank.qetQuestions(getSelectedTopic);
+        questionsLists = QuestionsBank.getQuestions(this, getSelectedTopic);
 
 
 
