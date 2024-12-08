@@ -1,4 +1,20 @@
 <resources>
+
+    <string name="login_icon_description">Иконка входа</string>
+    <string name="login_title">Войти</string>
+    <string name="email_icon_description">Иконка email</string>
+    <string name="password_icon_description">Иконка пароля</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="first_time">У нас впервые?</string>
+    <string name="signup">Зарегистрироваться</string>
+    <string name="signup_icon_description">Иконка регистрации</string>
+    <string name="user_icon_description">Иконка пользователя</string>
+    <string name="user">Имя пользователя</string>
+
+
+
+
     <string name="app_name">Викторина</string>
     <string name="choose_quiz">Выберите викторину:</string>
     <string name="general_erudition">Общая эрудиция</string>
@@ -322,15 +338,5 @@
     <string name="g_question10_option3">Каир</string>
     <string name="g_question10_option4">Тбилиси</string>
     <string name="g_question10_correct_answer">Стамбул</string>
-
-
-
-
-
-
-
-
-
-
 
 </resources>

@@ -2,7 +2,6 @@ package com.example.tvseries_quiz;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,7 +24,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText emailId;
     private EditText passId;
     private EditText userId;
-    private Button registerBtn;
     private FirebaseAuth mAuth;
 
     @Override
@@ -44,27 +42,24 @@ public class RegisterActivity extends AppCompatActivity {
         emailId = findViewById(R.id.emailId);
         passId = findViewById(R.id.passId);
         userId = findViewById(R.id.userId);
-        registerBtn = findViewById(R.id.registerBtn);
+        Button registerBtn = findViewById(R.id.registerBtn);
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+        registerBtn.setOnClickListener(v-> {
                 String email = emailId.getText().toString();
                 String password = passId.getText().toString();
                 String username = userId.getText().toString();
 
                 if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    Toast.makeText(getApplicationContext(), "Invalid email format", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Неверный формат электронной почты", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (password.length() < 6) {
-                    Toast.makeText(getApplicationContext(), "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Пароль должен содержать не менее 6 символов", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Fields cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Поля не могут быть пустыми", Toast.LENGTH_SHORT).show();
                 } else {
                     // Создание пользователя
                     mAuth.createUserWithEmailAndPassword(email, password)
@@ -85,20 +80,19 @@ public class RegisterActivity extends AppCompatActivity {
                                         userRef.child(user.getUid()).setValue(userInfo)
                                                 .addOnCompleteListener(saveTask -> {
                                                     if (saveTask.isSuccessful()) {
-                                                        Toast.makeText(getApplicationContext(), "User registered successfully", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "Пользователь успешно зарегистрирован", Toast.LENGTH_SHORT).show();
                                                         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                                                         finish(); // Закрыть RegisterActivity
                                                     } else {
-                                                        Toast.makeText(getApplicationContext(), "Failed to save user info.", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "Не удалось сохранить информацию о пользователе", Toast.LENGTH_SHORT).show();
                                                     }
                                                 });
                                     }
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Регистрация не удалась: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
-            }
         });
     }
 }
