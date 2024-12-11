@@ -36,6 +36,7 @@ public class QuizResults extends AppCompatActivity {
         final int getCorrectAnswers = getIntent().getIntExtra("correct", 0);
         final int getInCorrectAnswers = getIntent().getIntExtra("incorrect", 0);
 
+
         correctAnswers.setText(getString(R.string.correct_answers_display, getCorrectAnswers));
         inCorrectAnswers.setText(getString(R.string.incorrect_answers_display, getInCorrectAnswers));
 

@@ -6,9 +6,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import android.os.CountDownTimer;
-import android.util.Log;
 
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 
 //import android.os.CountDownTimer;
@@ -61,7 +58,6 @@ public class QuizActivity extends AppCompatActivity {
         });
 
         final ImageView backBtn = findViewById(R.id.backBtn);
-        //final TextView timer = findViewById(R.id.timer);
         final TextView selectedTopicName = findViewById(R.id.selectedTopicName);
 
         mediaPlayerChoose = MediaPlayer.create(this, R.raw.sound_choose);
@@ -183,14 +179,14 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private CountDownTimer quizTimer;
-    private int seconds = 30; // Установите время на каждый вопрос
+    final private int seconds = 30; // Установите время на каждый вопрос
 
     private void startTimer() {
         quizTimer = new CountDownTimer(seconds * 1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 // Обновите текст таймера в UI
-                timer.setText("Осталось: " + millisUntilFinished / 1000 + " сек");
+                timer.setText("00:" + millisUntilFinished / 1000);
             }
 
             @Override
@@ -366,10 +362,6 @@ public class QuizActivity extends AppCompatActivity {
                 for (String userAnswer : question.getUserSelectedAnswers()) {
                     userAnswerSet.add(userAnswer.trim());  // Убираем пробелы
                 }
-
-                // Логирование для отладки
-                Log.d("Correct Answers", "Correct Answers: " + correctAnswerSet.toString());
-                Log.d("User Answers", "User Answers: " + userAnswerSet.toString());
 
                 // Сравниваем множества
                 if (correctAnswerSet.equals(userAnswerSet)) {

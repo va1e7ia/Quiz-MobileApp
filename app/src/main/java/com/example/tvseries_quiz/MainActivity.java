@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -18,6 +20,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 //import androidx.annotation.NonNull;
 //import com.google.firebase.auth.FirebaseUser;
 //import com.google.firebase.database.DataSnapshot;
@@ -34,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayerChoose, mediaPlayerFail, mediaPlayerNext;
 
     private String selectedTopic = "";
+
+    private TextView usernameTextView; // Добавьте это поле
+
 
 
     @Override
@@ -54,8 +65,37 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+
         // КНОПКА ВЫХОДА ИЗ АККАУНТА
         Button logoutBtn = findViewById(R.id.logoutBtn);
+        usernameTextView = findViewById(R.id.usernameTextView);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            DatabaseReference userRef = FirebaseDatabase.getInstance("https://androidquiz-534e9-default-rtdb.europe-west1.firebasedatabase.app").getReference("Users").child(user.getUid());
+            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String username = dataSnapshot.child("username").getValue(String.class);
+                    Log.d("Firebase", "Username: " + username); // Логируем имя пользователя
+
+                    if (username != null) {
+                        usernameTextView.setText("Привет, " + username + "!");
+                    } else {
+                        usernameTextView.setText("Имя пользователя не найдено.");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.e("Firebase", "Ошибка получения данных: " + databaseError.getMessage());
+                    usernameTextView.setText("Ошибка получения данных.");
+                }
+            });
+
+        } else {
+            usernameTextView.setText("Пожалуйста, войдите в систему."); // Если пользователь не авторизован
+        }
 
         logoutBtn.setOnClickListener(v -> {
                 FirebaseAuth.getInstance().signOut(); // Выход из текущей сессии
