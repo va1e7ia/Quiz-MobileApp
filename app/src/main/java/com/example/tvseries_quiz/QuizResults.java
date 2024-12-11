@@ -45,5 +45,20 @@ public class QuizResults extends AppCompatActivity {
                 finish();
         });
 
+        AppCompatButton shareResultsBtn = findViewById(R.id.shareResultsBtn);
+        shareResultsBtn.setOnClickListener(v -> {
+            String shareText = "Я прошел квиз! Правильные ответы: " + getCorrectAnswers + ", Неправильные ответы: " + getInCorrectAnswers;
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+            startActivity(Intent.createChooser(shareIntent, "Поделиться результатами"));
+        });
+
+        correctAnswers.setAlpha(0f);
+        correctAnswers.animate().alpha(1f).setDuration(1000);
+
+        inCorrectAnswers.setAlpha(0f);
+        inCorrectAnswers.animate().alpha(1f).setDuration(1000);
+
     }
 }

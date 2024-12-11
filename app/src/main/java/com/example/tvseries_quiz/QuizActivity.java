@@ -5,8 +5,10 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import android.os.CountDownTimer;
 import android.util.Log;
 
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,8 +22,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 //import android.os.CountDownTimer;
@@ -33,9 +37,10 @@ public class QuizActivity extends AppCompatActivity {
     MediaPlayer mediaPlayerChoose, mediaPlayerFail, mediaPlayerNext, mediaPlayerBack, mediaPlayerRight;
     private TextView questions, question;
     private AppCompatButton option1, option2, option3, option4;
-//    private CountDownTimer quizTimer;
-//    private int seconds = 0;
-//    private int totalTimeInMins = 1;
+
+    private boolean isFiftyFiftyUsed = false;
+
+    private TextView timer;
 
     private List<QuestionsList> questionsLists;
     private int currentQuestionPosition = 0;
@@ -46,6 +51,8 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_quiz);
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -64,7 +71,20 @@ public class QuizActivity extends AppCompatActivity {
         mediaPlayerRight = MediaPlayer.create(this, R.raw.sound_right);
 
 
+        AppCompatButton lifeline50_50 = findViewById(R.id.lifeline_50_50);
+        lifeline50_50.setOnClickListener(v -> {
+            if (!isFiftyFiftyUsed) {
+                highlightIncorrectAnswer();
+                isFiftyFiftyUsed = true; // Запрещаем повторное использование
+                lifeline50_50.setEnabled(false); // Деактивируем кнопку
+            } else {
+                Toast.makeText(QuizActivity.this, "Эта подсказка уже использована!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
+
+        // Инициализация других элементов
+        timer = findViewById(R.id.timer); // Инициализация таймера
         questions = findViewById(R.id.questions);
         question = findViewById(R.id.question);
         option1 = findViewById(R.id.option1);
@@ -80,9 +100,9 @@ public class QuizActivity extends AppCompatActivity {
         assert getSelectedTopic != null;
         questionsLists = QuestionsBank.getQuestions(this, getSelectedTopic);
 
-
-
         loadQuestion();
+
+
 
         backBtn.setOnClickListener(v -> {
             //quizTimer.cancel();
@@ -111,6 +131,30 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+
+    private void highlightIncorrectAnswer() {
+        QuestionsList currentQuestion = questionsLists.get(currentQuestionPosition);
+        String correctAnswer = currentQuestion.getAnswer(); // Получаем правильный ответ
+        List<String> options = Arrays.asList(option1.getText().toString(), option2.getText().toString(),
+                option3.getText().toString(), option4.getText().toString());
+
+        for (String option : options) {
+            if (!option.equals(correctAnswer)) {
+                // Выделяем неправильный ответ
+                if (option.equals(option1.getText().toString())) {
+                    option1.setBackgroundResource(R.drawable.round_back_red);
+                } else if (option.equals(option2.getText().toString())) {
+                    option2.setBackgroundResource(R.drawable.round_back_red);
+                } else if (option.equals(option3.getText().toString())) {
+                    option3.setBackgroundResource(R.drawable.round_back_red);
+                } else if (option.equals(option4.getText().toString())) {
+                    option4.setBackgroundResource(R.drawable.round_back_red);
+                }
+                break; // Выходим после выделения первого неправильного ответа
+            }
+        }
+    }
+
     private void loadQuestion() {
         QuestionsList currentQuestion = questionsLists.get(currentQuestionPosition);
 
@@ -125,6 +169,38 @@ public class QuizActivity extends AppCompatActivity {
         option4.setText(currentQuestion.getOption4());
 
         resetOptionStyles();
+        startTimer();
+
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (quizTimer != null) {
+            quizTimer.cancel(); // Остановите таймер
+        }
+    }
+
+    private CountDownTimer quizTimer;
+    private int seconds = 30; // Установите время на каждый вопрос
+
+    private void startTimer() {
+        quizTimer = new CountDownTimer(seconds * 1000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                // Обновите текст таймера в UI
+                timer.setText("Осталось: " + millisUntilFinished / 1000 + " сек");
+            }
+
+            @Override
+            public void onFinish() {
+
+                mediaPlayerFail.start();
+                // Переход к следующему вопросу, если время истекл
+                changeNextQuestion();
+            }
+        }.start();
     }
 
     private void handleOptionSelection(AppCompatButton option) {
@@ -135,26 +211,39 @@ public class QuizActivity extends AppCompatActivity {
             if (selectedOptionsByUser.contains(selectedOption)) {
                 // Убираем вариант, если он уже был выбран
                 selectedOptionsByUser.remove(selectedOption);
-                option.setBackgroundResource(R.drawable.round_back_white);
-                option.setTextColor(Color.BLACK);
+                option.setBackgroundResource(R.drawable.round_back_white); // Обычный стиль
             } else {
                 // Добавляем вариант в список выбранных
                 selectedOptionsByUser.add(selectedOption);
-                option.setBackgroundResource(R.drawable.round_back_green10);
-                option.setTextColor(Color.WHITE);
+                option.setBackgroundResource(R.drawable.round_back_white_stroke); // Черная рамка
             }
         } else {
+            // Для одиночного выбора
             if (selectedOptionsByUser.isEmpty()) {
-                // Для одиночного выбора, просто выделяем первый вариант
+                // Если еще ничего не выбрано, добавляем выбор
                 selectedOptionsByUser.add(selectedOption);
-                option.setBackgroundResource(R.drawable.round_back_red);
-                option.setTextColor(Color.WHITE);
-                revealAnswer();
+                option.setBackgroundResource(R.drawable.round_back_white_stroke); // Черная рамка
+            } else {
+                // Если уже есть выбор, меняем его
+                String previousSelection = selectedOptionsByUser.get(0);
+                selectedOptionsByUser.clear(); // Очищаем предыдущий выбор
+                selectedOptionsByUser.add(selectedOption); // Добавляем новый выбор
+
+                // Сброс стиля для предыдущего выбора
+                if (previousSelection.equals(option1.getText().toString())) {
+                    option1.setBackgroundResource(R.drawable.round_back_white);
+                } else if (previousSelection.equals(option2.getText().toString())) {
+                    option2.setBackgroundResource(R.drawable.round_back_white);
+                } else if (previousSelection.equals(option3.getText().toString())) {
+                    option3.setBackgroundResource(R.drawable.round_back_white);
+                } else if (previousSelection.equals(option4.getText().toString())) {
+                    option4.setBackgroundResource(R.drawable.round_back_white);
+                }
+
+                // Устанавливаем стиль для нового выбора
+                option.setBackgroundResource(R.drawable.round_back_white_stroke); // Черная рамка
             }
         }
-
-        // После выбора вариантов, подсвечиваем правильные ответы
-        revealAnswer();
     }
 
     private void saveUserAnswers() {
@@ -167,84 +256,85 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
-    private void revealAnswer() {
-        QuestionsList currentQuestion = questionsLists.get(currentQuestionPosition);
-        String correctAnswer = currentQuestion.getAnswer();  // Правильный ответ для одиночного выбора
-        List<String> correctAnswers = currentQuestion.getCorrectAnswers();  // Для множественного выбора
-
-        // Для одиночного выбора
-        if (!currentQuestion.isMultipleChoice()) {
-            if (option1.getText().toString().equals(correctAnswer)) {
-                option1.setBackgroundResource(R.drawable.round_back_green10);
-                option1.setTextColor(Color.WHITE);
-            } else {
-                option1.setBackgroundResource(R.drawable.round_back_red);
-                option1.setTextColor(Color.WHITE);
-            }
-
-            if (option2.getText().toString().equals(correctAnswer)) {
-                option2.setBackgroundResource(R.drawable.round_back_green10);
-                option2.setTextColor(Color.WHITE);
-            } else {
-                option2.setBackgroundResource(R.drawable.round_back_red);
-                option2.setTextColor(Color.WHITE);
-            }
-
-            if (option3.getText().toString().equals(correctAnswer)) {
-                option3.setBackgroundResource(R.drawable.round_back_green10);
-                option3.setTextColor(Color.WHITE);
-            } else {
-                option3.setBackgroundResource(R.drawable.round_back_red);
-                option3.setTextColor(Color.WHITE);
-            }
-
-            if (option4.getText().toString().equals(correctAnswer)) {
-                option4.setBackgroundResource(R.drawable.round_back_green10);
-                option4.setTextColor(Color.WHITE);
-            } else {
-                option4.setBackgroundResource(R.drawable.round_back_red);
-                option4.setTextColor(Color.WHITE);
-            }
-        } else {
-            // Для множественного выбора
-            // Если правильный, подсвечиваем зеленым, если неправильный, красным
-            if (correctAnswers.contains(option1.getText().toString())) {
-                option1.setBackgroundResource(R.drawable.round_back_green10);
-                option1.setTextColor(Color.WHITE);
-            } else if (option1.getText().toString().equals(selectedOptionsByUser)) {
-                option1.setBackgroundResource(R.drawable.round_back_red);
-                option1.setTextColor(Color.WHITE);
-            }
-
-            if (correctAnswers.contains(option2.getText().toString())) {
-                option2.setBackgroundResource(R.drawable.round_back_green10);
-                option2.setTextColor(Color.WHITE);
-            } else if (option2.getText().toString().equals(selectedOptionsByUser)) {
-                option2.setBackgroundResource(R.drawable.round_back_red);
-                option2.setTextColor(Color.WHITE);
-            }
-
-            if (correctAnswers.contains(option3.getText().toString())) {
-                option3.setBackgroundResource(R.drawable.round_back_green10);
-                option3.setTextColor(Color.WHITE);
-            } else if (option3.getText().toString().equals(selectedOptionsByUser)) {
-                option3.setBackgroundResource(R.drawable.round_back_red);
-                option3.setTextColor(Color.WHITE);
-            }
-
-            if (correctAnswers.contains(option4.getText().toString())) {
-                option4.setBackgroundResource(R.drawable.round_back_green10);
-                option4.setTextColor(Color.WHITE);
-            } else if (option4.getText().toString().equals(selectedOptionsByUser)) {
-                option4.setBackgroundResource(R.drawable.round_back_red);
-                option4.setTextColor(Color.WHITE);
-            }
-        }
-    }
+//    private void revealAnswer() {
+//        QuestionsList currentQuestion = questionsLists.get(currentQuestionPosition);
+//        String correctAnswer = currentQuestion.getAnswer();  // Правильный ответ для одиночного выбора
+//        List<String> correctAnswers = currentQuestion.getCorrectAnswers();  // Для множественного выбора
+//
+//        // Для одиночного выбора
+//        if (!currentQuestion.isMultipleChoice()) {
+//            if (option1.getText().toString().equals(correctAnswer)) {
+//                option1.setBackgroundResource(R.drawable.round_back_green10);
+//                option1.setTextColor(Color.WHITE);
+//            } else {
+//                option1.setBackgroundResource(R.drawable.round_back_red);
+//                option1.setTextColor(Color.WHITE);
+//            }
+//
+//            if (option2.getText().toString().equals(correctAnswer)) {
+//                option2.setBackgroundResource(R.drawable.round_back_green10);
+//                option2.setTextColor(Color.WHITE);
+//            } else {
+//                option2.setBackgroundResource(R.drawable.round_back_red);
+//                option2.setTextColor(Color.WHITE);
+//            }
+//
+//            if (option3.getText().toString().equals(correctAnswer)) {
+//                option3.setBackgroundResource(R.drawable.round_back_green10);
+//                option3.setTextColor(Color.WHITE);
+//            } else {
+//                option3.setBackgroundResource(R.drawable.round_back_red);
+//                option3.setTextColor(Color.WHITE);
+//            }
+//
+//            if (option4.getText().toString().equals(correctAnswer)) {
+//                option4.setBackgroundResource(R.drawable.round_back_green10);
+//                option4.setTextColor(Color.WHITE);
+//            } else {
+//                option4.setBackgroundResource(R.drawable.round_back_red);
+//                option4.setTextColor(Color.WHITE);
+//            }
+//        } else {
+//            // Для множественного выбора
+//            // Если правильный, подсвечиваем зеленым, если неправильный, красным
+//            if (correctAnswers.contains(option1.getText().toString())) {
+//                option1.setBackgroundResource(R.drawable.round_back_green10);
+//                option1.setTextColor(Color.WHITE);
+//            } else if (option1.getText().toString().equals(selectedOptionsByUser)) {
+//                option1.setBackgroundResource(R.drawable.round_back_red);
+//                option1.setTextColor(Color.WHITE);
+//            }
+//
+//            if (correctAnswers.contains(option2.getText().toString())) {
+//                option2.setBackgroundResource(R.drawable.round_back_green10);
+//                option2.setTextColor(Color.WHITE);
+//            } else if (option2.getText().toString().equals(selectedOptionsByUser)) {
+//                option2.setBackgroundResource(R.drawable.round_back_red);
+//                option2.setTextColor(Color.WHITE);
+//            }
+//
+//            if (correctAnswers.contains(option3.getText().toString())) {
+//                option3.setBackgroundResource(R.drawable.round_back_green10);
+//                option3.setTextColor(Color.WHITE);
+//            } else if (option3.getText().toString().equals(selectedOptionsByUser)) {
+//                option3.setBackgroundResource(R.drawable.round_back_red);
+//                option3.setTextColor(Color.WHITE);
+//            }
+//
+//            if (correctAnswers.contains(option4.getText().toString())) {
+//                option4.setBackgroundResource(R.drawable.round_back_green10);
+//                option4.setTextColor(Color.WHITE);
+//            } else if (option4.getText().toString().equals(selectedOptionsByUser)) {
+//                option4.setBackgroundResource(R.drawable.round_back_red);
+//                option4.setTextColor(Color.WHITE);
+//            }
+//        }
+//    }
 
 
 
     private void changeNextQuestion() {
+        quizTimer.cancel();
         currentQuestionPosition++;
         if (currentQuestionPosition < questionsLists.size()) {
             loadQuestion();
@@ -312,4 +402,8 @@ public class QuizActivity extends AppCompatActivity {
         option4.setBackgroundResource(R.drawable.round_back_white);
         option4.setTextColor(Color.BLACK);
     }
+
+
+
+
 }

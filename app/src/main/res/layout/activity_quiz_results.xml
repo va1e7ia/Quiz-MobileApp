@@ -78,4 +78,17 @@
         android:layout_margin="50dp"
         android:background="@drawable/round_back_green"
         />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/shareResultsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="поделиться"
+        android:layout_above="@id/startNewQuizBtn"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/round_back_green"
+        />
+
+
 </RelativeLayout>
