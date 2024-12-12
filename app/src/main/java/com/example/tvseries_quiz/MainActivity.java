@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -64,7 +65,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
 
-
+        Button learnTicketsBtn = findViewById(R.id.learnTicketsBtn);
+        learnTicketsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LearnTicketsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // КНОПКА ВЫХОДА ИЗ АККАУНТА
         Button logoutBtn = findViewById(R.id.logoutBtn);

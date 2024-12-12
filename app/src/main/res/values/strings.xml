@@ -13,11 +13,9 @@
     <string name="user">Имя пользователя</string>
 
 
-
-
     <string name="app_name">Викторина</string>
     <string name="choose_quiz">Выберите викторину:</string>
-    <string name="general_erudition">Общая эрудиция</string>
+    <string name="general_erudition">1 билет</string>
     <string name="logout_btn">Выйти из \nаккаунта</string>
     <string name="quiz_icon_description">Иконка викторины</string>
     <string name="generalErudition_icon_description">Иконка общей эрудиции</string>
@@ -25,9 +23,9 @@
     <string name="music_icon_description">Иконка музыки</string>
     <string name="geography_icon_description">Иконка географии</string>
 
-    <string name="film">Кино и телевидение</string>
-    <string name="music">Музыка</string>
-    <string name="geography">География</string>
+    <string name="film">2 билет</string>
+    <string name="music">3 билет</string>
+    <string name="geography">4 билет</string>
     <string name="start_quiz">Начать викторину</string>
 
     <string name="next_question">Следующий\nвопрос</string>
@@ -48,295 +46,303 @@
 
     <string name="question_display">%1$d/%2$d</string>
 
-<!--    ВОПРОСЫ ПО ОБЩЕЙ ЭРУДИЦИИ-->
+    <!--    ВОПРОСЫ ПО ОБЩЕЙ ЭРУДИЦИИ-->
 
-    <string name="question1_title">Какие из этих фактов о животных являются верными?(2 варианта)</string>
-    <string name="question1_option1">Дельфины спят с одним открытым глазом</string>
-    <string name="question1_option2">Тигры не умеют рычать</string>
-    <string name="question1_option3">Слоны имеют по шесть зубов</string>
-    <string name="question1_option4">Пауки могут прыгать</string>
-    <string name="question1_correct_answer">Дельфины спят с одним открытым глазом, Пауки могут прыгать</string>
+    <string name="question1_title">Какие периоды первобытного строя существовали?</string>
+    <string name="question1_option1">Каменный, бронзовый, железный века</string>
+    <string name="question1_option2">Древний, средний, новый века</string>
+    <string name="question1_option3">Каменный, золотой, серебряный века</string>
+    <string name="question1_option4">Бронзовый, железный, стеклянный века</string>
+    <string name="question1_correct_answer">Каменный, бронзовый, железный века</string>
 
-    <string name="question2_title">Какие огурцы сажал на брезентовом поле герой одноименной песни?</string>
-    <string name="question2_option1">Железные</string>
-    <string name="question2_option2">Оловянные</string>
-    <string name="question2_option3">Медные</string>
-    <string name="question2_option4">Алюминиевые</string>
-    <string name="question2_correct_answer">Алюминиевые</string>
+    <string name="question2_title">Кто такие кроманьонцы?</string>
+    <string name="question2_option1">Первобытные люди, жившие 40–35 тысяч лет назад</string>
+    <string name="question2_option2">Люди железного века</string>
+    <string name="question2_option3">Древние жители Африки</string>
+    <string name="question2_option4">Создатели первых металлических орудий</string>
+    <string name="question2_correct_answer">Первобытные люди, жившие 40–35 тысяч лет назад</string>
 
-    <string name="question3_title">У какого животного самые большие глаза относительно тела?</string>
-    <string name="question3_option1">У лемура</string>
-    <string name="question3_option2">У летучей мыши</string>
-    <string name="question3_option3">У долгопята</string>
-    <string name="question3_option4">У тупайи</string>
-    <string name="question3_correct_answer">У долгопята</string>
+    <string name="question3_title">Какие достижения были в каменном веке? (2 варианта)</string>
+    <string name="question3_option1">Освоение огня</string>
+    <string name="question3_option2">Изобретение остроконечных орудий</string>
+    <string name="question3_option3">Производство железных изделий</string>
+    <string name="question3_option4">Собирательство и охота на мамонтов</string>
+    <string name="question3_correct_answer">Освоение огня, Изобретение остроконечных орудий</string>
 
-    <string name="question4_title">Детинцем на Руси называли...</string>
-    <string name="question4_option1">Кремль</string>
-    <string name="question4_option2">Школу</string>
-    <string name="question4_option3">Княжеский терем</string>
-    <string name="question4_option4">Монастырь</string>
-    <string name="question4_correct_answer">Кремль</string>
+    <string name="question4_title">Какой образ жизни начали вести первобытные люди в каменном веке?</string>
+    <string name="question4_option1">Оседлый</string>
+    <string name="question4_option2">Кочевой</string>
+    <string name="question4_option3">Производственный</string>
+    <string name="question4_option4">Земледельческий</string>
+    <string name="question4_correct_answer">Оседлый</string>
 
-    <string name="question5_title">Какие планеты являются газовыми гигантами?(2 варианта)</string>
-    <string name="question5_option1">Меркурий</string>
-    <string name="question5_option2">Юпитер</string>
-    <string name="question5_option3">Сатурн</string>
-    <string name="question5_option4">Марс</string>
-    <string name="question5_correct_answer">Юпитер, Сатурн</string>
+    <string name="question5_title">Когда начался бронзовый век?</string>
+    <string name="question5_option1">В конце III тысячелетия до н. э.</string>
+    <string name="question5_option2">Со II тысячелетия до н. э.</string>
+    <string name="question5_option3">С VIII века до н. э.</string>
+    <string name="question5_option4"> С начала I тысячелетия до н. э.</string>
+    <string name="question5_correct_answer">Со II тысячелетия до н. э.</string>
 
-    <string name="question6_title">Продолжите пословицу: «Знает кошка…»</string>
-    <string name="question6_option1">«Да мыши не знают»</string>
-    <string name="question6_option2">«Почем фунт лиха»</string>
-    <string name="question6_option3">«Где собака зарыта»</string>
-    <string name="question6_option4">«Чье мясо съела»</string>
-    <string name="question6_correct_answer">«Чье мясо съела»</string>
+    <string name="question6_title">Какие изменения произошли в бронзовом веке? (2 варианта)</string>
+    <string name="question6_option1">Переход к производящему хозяйству</string>
+    <string name="question6_option2">Освоение железной руды</string>
+    <string name="question6_option3">Начало подсечно-огневого земледелия</string>
+    <string name="question6_option4"> Замена матриархата патриархатом</string>
+    <string name="question6_correct_answer">Переход к производящему хозяйству, Замена матриархата патриархатом</string>
 
-    <string name="question7_title">Какие из этих элементы входят в состав воды?(2 варианта)</string>
-    <string name="question7_option1">Кислород</string>
-    <string name="question7_option2">Азот</string>
-    <string name="question7_option3">Водород</string>
-    <string name="question7_option4">Углекислый газ</string>
-    <string name="question7_correct_answer">Кислород, Водород</string>
+    <string name="question7_title">Какие материалы использовались для орудий в каменном и бронзовом веках?</string>
+    <string name="question7_option1">Камень и бронза</string>
+    <string name="question7_option2"> Железо и медь</string>
+    <string name="question7_option3">Камень и железо</string>
+    <string name="question7_option4">Кремень и бронза</string>
+    <string name="question7_correct_answer">Камень и бронза</string>
 
-    <string name="question8_title">Как называется человек, покоряющий крыши многоэтажных домов?</string>
-    <string name="question8_option1">Диггер</string>
-    <string name="question8_option2">Сталкер</string>
-    <string name="question8_option3">Руфер</string>
-    <string name="question8_option4">Байкер</string>
-    <string name="question8_correct_answer">Руфер</string>
+    <string name="question8_title">Что появилось в железном веке? (2 варианта)</string>
+    <string name="question8_option1">Оседлое земледелие</string>
+    <string name="question8_option2">Пашенное земледелие</string>
+    <string name="question8_option3">Имущественное неравенство</string>
+    <string name="question8_option4">Изготовление изделий из бронзы</string>
+    <string name="question8_correct_answer">Пашенное земледелие, Имущественное неравенство</string>
 
-    <string name="question9_title">Какая пряность по форме напоминает звездочку?</string>
-    <string name="question9_option1">Майоран</string>
-    <string name="question9_option2">Кардамон</string>
-    <string name="question9_option3">Гвоздика</string>
-    <string name="question9_option4">Бадьян</string>
-    <string name="question9_correct_answer">Бадьян</string>
+    <string name="question9_title">Какие обычаи и верования были связаны с похоронными обрядами? (2 варианта)</string>
+    <string name="question9_option1">Вера в бессмертие души</string>
+    <string name="question9_option2">Курганы над могилами</string>
+    <string name="question9_option3">Мумии и саркофаги</string>
+    <string name="question9_option4">Поклонение сверхъестественным силам природы</string>
+    <string name="question9_correct_answer">Вера в бессмертие души, Курганы над могилами</string>
 
-    <string name="question10_title">Сколько лет проходит между ситцевой и золотой свадьбой?</string>
-    <string name="question10_option1">11</string>
-    <string name="question10_option2">19</string>
-    <string name="question10_option3">25</string>
-    <string name="question10_option4">49</string>
-    <string name="question10_correct_answer">49</string>
+    <string name="question10_title">Примеры искусства первобытного строя включают: (2 варианта)</string>
+    <string name="question10_option1">Скульптуру</string>
+    <string name="question10_option2">Изготовление музыкальных инструментов</string>
+    <string name="question10_option3">Письменность</string>
+    <string name="question10_option4">Женские украшения</string>
+    <string name="question10_correct_answer">Скульптуру, Женские украшения</string>
 
-<!--    =================================================-->
-<!--    ВОПРОСЫ ПО ФИЛЬМАМ-->
+    <!--    =================================================-->
+    <!--    ВОПРОСЫ ПО ФИЛЬМАМ-->
 
-    <string name="f_question1_title">Какой фильм стал первым полнометражным анимационным фильмом Disney?</string>
-    <string name="f_question1_option1">"Золушка"</string>
-    <string name="f_question1_option2">"Спящая красавица"</string>
-    <string name="f_question1_option3">"Белоснежка и семь гномов"</string>
-    <string name="f_question1_option4">"Пиноккио"</string>
-    <string name="f_question1_correct_answer">Белоснежка и семь гномов</string>
+    <string name="f_question1_title">Какое событие произошло в конце IX века?</string>
+    <string name="f_question1_option1">Образование Киевской Руси</string>
+    <string name="f_question1_option2">Появление христианства</string>
+    <string name="f_question1_option3">Основание Полоцка</string>
+    <string name="f_question1_option4">Нападение на Минск</string>
+    <string name="f_question1_correct_answer">Образование Киевской Руси</string>
 
-    <string name="f_question2_title">Какой актер сыграл роль Джеймса Бонда в фильме "Casino Royale" (2006)?</string>
-    <string name="f_question2_option1">Пирс Броснан</string>
-    <string name="f_question2_option2">Дэниел Крейг</string>
-    <string name="f_question2_option3">Шон Коннери</string>
-    <string name="f_question2_option4">Тимоти Далтон</string>
-    <string name="f_question2_correct_answer">Дэниел Крейг</string>
+    <string name="f_question2_title">Кто был первым полоцким князем?</string>
+    <string name="f_question2_option1">Владимир</string>
+    <string name="f_question2_option2">Изяслав</string>
+    <string name="f_question2_option3">Рогволод</string>
+    <string name="f_question2_option4">Брячислав</string>
+    <string name="f_question2_correct_answer">Рогволод</string>
 
-    <string name="f_question3_title">Какой сериал о группе друзей, живущих в Нью-Йорке, стал культовым в 1990-х?</string>
-    <string name="f_question3_option1">"Друзья"</string>
-    <string name="f_question3_option2">"Как я встретил вашу маму"</string>
-    <string name="f_question3_option3">"Секс в большом городе"</string>
-    <string name="f_question3_option4">"Семейные узы"</string>
-    <string name="f_question3_correct_answer">"Друзья"</string>
+    <string name="f_question3_title">Какие события связаны с Рогнедой? (2 варианта)</string>
+    <string name="f_question3_option1">Брак с князем Владимиром</string>
+    <string name="f_question3_option2">Переход в монашество под именем Анастасия</string>
+    <string name="f_question3_option3">Захват Новгорода</string>
+    <string name="f_question3_option4">Нападение на Минск</string>
+    <string name="f_question3_correct_answer">Брак с князем Владимиром, Переход в монашество под именем Анастасия</string>
 
-    <string name="f_question4_title">Какие из этих актеры снимались в фильмах о Джеймсе Бонде?(2 варианта)</string>
-    <string name="f_question4_option1">Шон Коннери</string>
-    <string name="f_question4_option2">Пирс Броснан</string>
-    <string name="f_question4_option3">Дэниел Крейг</string>
-    <string name="f_question4_option4">Кристоф Вальц</string>
-    <string name="f_question4_correct_answer">Шон Коннери, Пирс Броснан</string>
+    <string name="f_question4_title">Какой полоцкий князь был прозван Чародеем?</string>
+    <string name="f_question4_option1">Брячислав</string>
+    <string name="f_question4_option2">Всеслав</string>
+    <string name="f_question4_option3">Изяслав</string>
+    <string name="f_question4_option4">Рогволод</string>
+    <string name="f_question4_correct_answer">Всеслав</string>
 
-    <string name="f_question5_title">Какой фильм о вампирах, вышедший в 1994 году, был снят по роману Энн Райс?</string>
-    <string name="f_question5_option1">"Сумерки"</string>
-    <string name="f_question5_option2">"Интервью с вампиром"</string>
-    <string name="f_question5_option3">"Дракула"</string>
-    <string name="f_question5_option4">"Вампиры"</string>
-    <string name="f_question5_correct_answer">"Интервью с вампиром"</string>
+    <string name="f_question5_title">Какие события произошли в 1067 году? (2 варианта)</string>
+    <string name="f_question5_option1">Захват Новгорода Всеславом</string>
+    <string name="f_question5_option2">Битва на реке Немиге</string>
+    <string name="f_question5_option3">Переход Туровского княжества к самостоятельной династии</string>
+    <string name="f_question5_option4">Возведение Пинска над Туровом</string>
+    <string name="f_question5_correct_answer">Битва на реке Немиге, Возведение Пинска над Туровом</string>
 
-    <string name="f_question6_title">Как зовут персонажа, которого играет Крис Хемсворт в фильмах Marvel?</string>
-    <string name="f_question6_option1">Тони Старк</string>
-    <string name="f_question6_option2">Капитан Америка</string>
-    <string name="f_question6_option3">Тор</string>
-    <string name="f_question6_option4">Халк</string>
-    <string name="f_question6_correct_answer">Тор</string>
+    <string name="f_question6_title">Что сочетала власть князя в Полоцком княжестве? (2 варианта)</string>
+    <string name="f_question6_option1">Командование войском</string>
+    <string name="f_question6_option2">Ведение торговли</string>
+    <string name="f_question6_option3">Наличие вече</string>
+    <string name="f_question6_option4">Написание законов</string>
+    <string name="f_question6_correct_answer"> Командование войском, Наличие вече</string>
 
-    <string name="f_question7_title">Кто создал знаменитый мультсериал "Симпсоны"?</string>
-    <string name="f_question7_option1">Сет Макфарлейн</string>
-    <string name="f_question7_option2">Мэтт Грейнинг</string>
-    <string name="f_question7_option3">Трей Паркер</string>
-    <string name="f_question7_option4">Дэн Хармона</string>
-    <string name="f_question7_correct_answer">Мэтт Грейнинг</string>
+    <string name="f_question7_title">Что представляет собой сборник «Русская правда»? (2 варианта)</string>
+    <string name="f_question7_option1">Законодательный кодекс Киевской Руси</string>
+    <string name="f_question7_option2">Сборник религиозных текстов</string>
+    <string name="f_question7_option3">Законы, основанные на «суде Божьем»</string>
+    <string name="f_question7_option4">Свод военных приказов князя</string>
+    <string name="f_question7_correct_answer">Законодательный кодекс Киевской Руси, Законы, основанные на «суде Божьем»</string>
 
-    <string name="f_question8_title">Какой актер сыграл роль Уолтера Уайта в сериале "Во все тяжкие"?</string>
-    <string name="f_question8_option1">Брайан Кранстон</string>
-    <string name="f_question8_option2">Аррон Пол</string>
-    <string name="f_question8_option3">Алек Болдуин</string>
-    <string name="f_question8_option4">Джон Хамм</string>
-    <string name="f_question8_correct_answer">Брайан Кранстон</string>
+    <string name="f_question8_title">Какой город был центром Туровского княжества?</string>
+    <string name="f_question8_option1">Пинск</string>
+    <string name="f_question8_option2">Туров</string>
+    <string name="f_question8_option3">Минск</string>
+    <string name="f_question8_option4">Новгород</string>
+    <string name="f_question8_correct_answer">Туров</string>
 
-    <string name="f_question9_title">Какой фильм рассказывает о дружбе между мальчиком и инопланетянином?</string>
-    <string name="f_question9_option1">"Пришельцы"</string>
-    <string name="f_question9_option2">"Супермен"</string>
-    <string name="f_question9_option3">"Э.Т. Инопланетянин"</string>
-    <string name="f_question9_option4">"Контакт"</string>
-    <string name="f_question9_correct_answer">"Э.Т. Инопланетянин"</string>
+    <string name="f_question9_title">Что произошло в Туровском княжестве в XII веке? (2 варианта)</string>
+    <string name="f_question9_option1">Образование самостоятельной княжеской династии</string>
+    <string name="f_question9_option2">Принятие христианства</string>
+    <string name="f_question9_option3">Появление феодальной раздробленности</string>
+    <string name="f_question9_option4">Захват Пинском контроля над Туровом</string>
+    <string name="f_question9_correct_answer">Образование самостоятельной княжеской династии, Появление феодальной раздробленности</string>
 
-    <string name="f_question10_title">Какой российский сериал рассказывает о группе заключенных в тюрьме?</string>
-    <string name="f_question10_option1">"Бригада"</string>
-    <string name="f_question10_option2">"Универ"</string>
-    <string name="f_question10_option3">"Закрытая школа"</string>
-    <string name="f_question10_option4">"Операция "Ы" и другие приключения Шурика"</string>
-    <string name="f_question10_correct_answer">"Бригада"</string>
+    <string name="f_question10_title">Какую роль играл город Пинск? (2 варианта)</string>
+    <string name="f_question10_option1">Центр водного пути из Киева в Польшу</string>
+    <string name="f_question10_option2">Главный город Киевской Руси</string>
+    <string name="f_question10_option3">Конкурент Турова</string>
+    <string name="f_question10_option4">Место проведения вече</string>
+    <string name="f_question10_correct_answer">Центр водного пути из Киева в Польшу, Конкурент Турова</string>
 
     <!--    =================================================-->
     <!--    ВОПРОСЫ ПО МУЗЫКЕ-->
 
-    <string name="m_question1_title">Какой британской рок-группы был вокалистом Фредди Меркьюри?</string>
-    <string name="m_question1_option1">The Beatles</string>
-    <string name="m_question1_option2">Led Zeppelin</string>
-    <string name="m_question1_option3">Queen</string>
-    <string name="m_question1_option4">The Rolling Stones</string>
-    <string name="m_question1_correct_answer">Queen</string>
+    <string name="m_question1_title">Когда началось распространение христианской веры на белорусских землях?</string>
+    <string name="m_question1_option1">IX век</string>
+    <string name="m_question1_option2">X век</string>
+    <string name="m_question1_option3">XI век</string>
+    <string name="m_question1_option4">XIII век</string>
+    <string name="m_question1_correct_answer">X век</string>
 
-    <string name="m_question2_title">Какой альбом Майкла Джексона стал самым продаваемым альбомом всех времен?</string>
-    <string name="m_question2_option1">"Thriller"</string>
-    <string name="m_question2_option2">"Bad"</string>
-    <string name="m_question2_option3">"Dangerous"</string>
-    <string name="m_question2_option4">"Off the Wall"</string>
-    <string name="m_question2_correct_answer">"Thriller"</string>
+    <string name="m_question2_title">Кто основал первую епархию на белорусских землях?</string>
+    <string name="m_question2_option1">Рогволод</string>
+    <string name="m_question2_option2">Всеслав</string>
+    <string name="m_question2_option3">Изяслав</string>
+    <string name="m_question2_option4">Кирилл</string>
+    <string name="m_question2_correct_answer">Изяслав</string>
 
-    <string name="m_question3_title">Кто написал знаменитую песню "Imagine"?</string>
-    <string name="m_question3_option1">Пол Маккартни</string>
-    <string name="m_question3_option2">Джон Леннон</string>
-    <string name="m_question3_option3">Боб Дилан</string>
-    <string name="m_question3_option4">Элтон Джон</string>
-    <string name="m_question3_correct_answer">Джон Леннон</string>
+    <string name="m_question3_title">Какие письменные памятники связаны с древней Белоруссией? (2 варианта)</string>
+    <string name="m_question3_option1">Туровское евангелие</string>
+    <string name="m_question3_option2">Софийский собор</string>
+    <string name="m_question3_option3">Берестяные грамоты</string>
+    <string name="m_question3_option4">Лаврентьевская летопись</string>
+    <string name="m_question3_correct_answer">Туровское евангелие, Берестяные грамоты</string>
 
-    <string name="m_question4_title">Какой стиль музыки ассоциируется с городом Новый Орлеан и включает в себя элементы джаза и блюза?</string>
-    <string name="m_question4_option1">Рок</string>
-    <string name="m_question4_option2">Соул</string>
-    <string name="m_question4_option3">Фонк</string>
-    <string name="m_question4_option4">Дикси</string>
-    <string name="m_question4_correct_answer">Дикси</string>
+    <string name="m_question4_title">Что такое «Повесть временных лет»?</string>
+    <string name="m_question4_option1">Первая рукописная книга Беларуси</string>
+    <string name="m_question4_option2">Летопись со сведениями о событиях древнерусского государства</string>
+    <string name="m_question4_option3">Сборник законов</string>
+    <string name="m_question4_option4">Христианский гимн</string>
+    <string name="m_question4_correct_answer">Летопись со сведениями о событиях древнерусского государства</string>
 
-    <string name="m_question5_title">Какая группа выпустила хит "Hotel California"?</string>
-    <string name="m_question5_option1">The Eagles</string>
-    <string name="m_question5_option2">Fleetwood Mac</string>
-    <string name="m_question5_option3">Lynyrd Skynyrd</string>
-    <string name="m_question5_option4">The Doors</string>
-    <string name="m_question5_correct_answer">The Eagles</string>
+    <string name="m_question5_title">Кто был первой святой женщиной среди восточных славян?</string>
+    <string name="m_question5_option1">Рогнеда</string>
+    <string name="m_question5_option2">Евфросиния Полоцкая</string>
+    <string name="m_question5_option3">Предслава</string>
+    <string name="m_question5_option4">Анна Киевская</string>
+    <string name="m_question5_correct_answer">Евфросиния Полоцкая</string>
 
-    <string name="m_question6_title">Какой певец известен как "Король поп-музыки"?</string>
-    <string name="m_question6_option1">Элвис Пресли</string>
-    <string name="m_question6_option2">Майкл Джексон</string>
-    <string name="m_question6_option3">Принс</string>
-    <string name="m_question6_option4">Джастин Тимберлейк</string>
-    <string name="m_question6_correct_answer">Майкл Джексон</string>
+    <string name="m_question6_title">Что символизирует слово «София» в названии Софийского собора?</string>
+    <string name="m_question6_option1">Вера</string>
+    <string name="m_question6_option2">Божья мудрость</string>
+    <string name="m_question6_option3">Христианство</string>
+    <string name="m_question6_option4">Святость</string>
+    <string name="m_question6_correct_answer">Божья мудрость</string>
 
-    <string name="m_question7_title">Какой музыкальный фестиваль проходит в Гластонбери, Великобритания?</string>
-    <string name="m_question7_option1">Coachella</string>
-    <string name="m_question7_option2">Glastonbury Festival</string>
-    <string name="m_question7_option3">Lollapalooza</string>
-    <string name="m_question7_option4">Woodstock</string>
-    <string name="m_question7_correct_answer">Glastonbury Festival</string>
+    <string name="m_question7_title">Какие памятники архитектуры XII века связаны с белорусскими землями? (2 варианта)</string>
+    <string name="m_question7_option1">Софийский собор</string>
+    <string name="m_question7_option2">Коложская церковь</string>
+    <string name="m_question7_option3">Десятинная церковь</string>
+    <string name="m_question7_option4">Киево-Печерская лавра</string>
+    <string name="m_question7_correct_answer">Софийский собор, Коложская церковь</string>
 
-    <string name="m_question8_title">Какой жанр музыки был популярен в 1980-е годы и включает в себя синтезаторы и электронные инструменты?</string>
-    <string name="m_question8_option1">Хип-хоп</string>
-    <string name="m_question8_option2">Диско</string>
-    <string name="m_question8_option3">Новая волна</string>
-    <string name="m_question8_option4">Гранж</string>
-    <string name="m_question8_correct_answer">Новая волна</string>
+    <string name="m_question8_title">Какие особенности связаны с Коложской церковью? (2 варианта)</string>
+    <string name="m_question8_option1">Использование глиняных кувшинов в стенах</string>
+    <string name="m_question8_option2">Украшение золотыми пластинами</string>
+    <string name="m_question8_option3">Постройка из плоского кирпича</string>
+    <string name="m_question8_option4">Украшение фресками</string>
+    <string name="m_question8_correct_answer">Использование глиняных кувшинов в стенах, Украшение фресками</string>
 
-    <string name="m_question9_title">Кто из следующего является известным рэп-исполнителем и продюсером, основателем лейбла Roc-A-Fella Records?</string>
-    <string name="m_question9_option1">50 Cent</string>
-    <string name="m_question9_option2">Jay-Z</string>
-    <string name="m_question9_option3">Eminem</string>
-    <string name="m_question9_option4">Snoop Dogg</string>
-    <string name="m_question9_correct_answer">Jay-Z</string>
+    <string name="m_question9_title">Кто занимался письменностью и религиозной деятельностью в XII веке? (2 варианта)</string>
+    <string name="m_question9_option1">Кирилл</string>
+    <string name="m_question9_option2">Брячислав</string>
+    <string name="m_question9_option3">Евфросиния Полоцкая</string>
+    <string name="m_question9_option4">Владимир Мономах</string>
+    <string name="m_question9_correct_answer">Кирилл, Евфросиния Полоцкая</string>
 
-    <string name="m_question10_title">Какой музыкальный инструмент является символом классической музыки и часто используется в симфонических оркестрах?</string>
-    <string name="m_question10_option1">Гитара</string>
-    <string name="m_question10_option2">Фортепиано</string>
-    <string name="m_question10_option3">Скрипка</string>
-    <string name="m_question10_option4">Ударные</string>
-    <string name="m_question10_correct_answer">Скрипка</string>
+    <string name="m_question10_title">Что известно о кресте Евфросинии Полоцкой? (2 варианта)</string>
+    <string name="m_question10_option1">Он был сделан из золота и серебра</string>
+    <string name="m_question10_option2">Он был найден в Софийском соборе</string>
+    <string name="m_question10_option3">Это шестиконечный крест, созданный в 1161 году</string>
+    <string name="m_question10_option4">Это первая книга, написанная в Турове</string>
+    <string name="m_question10_correct_answer">Он был сделан из золота и серебра, Это шестиконечный крест, созданный в 1161 году</string>
 
     <!--    =================================================-->
     <!--    ВОПРОСЫ ПО ГЕОГРАФИИ-->
 
-    <string name="g_question1_title">Какой самый большой океан на Земле?</string>
-    <string name="g_question1_option1">Атлантический</string>
-    <string name="g_question1_option2">Индийский</string>
-    <string name="g_question1_option3">Тихий</string>
-    <string name="g_question1_option4">Северный Ледовитый</string>
-    <string name="g_question1_correct_answer">Тихий</string>
+    <string name="g_question1_title">Когда ВКЛ появилось на политической карте Европы?</string>
+    <string name="g_question1_option1">XI век</string>
+    <string name="g_question1_option2">XIII век</string>
+    <string name="g_question1_option3">XV век</string>
+    <string name="g_question1_option4">XII век</string>
+    <string name="g_question1_correct_answer">XIII век</string>
 
-    <string name="g_question2_title">В какой стране находится гора Эверест?</string>
-    <string name="g_question2_option1">Индия</string>
-    <string name="g_question2_option2">Непал</string>
-    <string name="g_question2_option3">Китай</string>
-    <string name="g_question2_option4">Бутан</string>
-    <string name="g_question2_correct_answer">Непал</string>
+    <string name="g_question2_title">Какие причины способствовали образованию ВКЛ? (2 варианта)</string>
+    <string name="g_question2_option1">Организация обороны от крестоносцев и монголо-татар</string>
+    <string name="g_question2_option2">Распад Киевской Руси</string>
+    <string name="g_question2_option3">Преодоление феодальной раздробленности</string>
+    <string name="g_question2_option4">Возвышение Полоцкого княжества</string>
+    <string name="g_question2_correct_answer">Организация обороны от крестоносцев и монголо-татар, Преодоление феодальной раздробленности</string>
 
-    <string name="g_question3_title">Какой континент является родиной пингвинов?</string>
-    <string name="g_question3_option1">Австралия</string>
-    <string name="g_question3_option2">Антарктида</string>
-    <string name="g_question3_option3">Южная Америка</string>
-    <string name="g_question3_option4">Африка</string>
-    <string name="g_question3_correct_answer">Антарктида</string>
+    <string name="g_question3_title">Где произошло формирование ВКЛ?</string>
+    <string name="g_question3_option1">В верхнем и среднем течении реки Неман</string>
+    <string name="g_question3_option2">В верхнем и среднем течении реки Днепр</string>
+    <string name="g_question3_option3">На землях Туровского княжества</string>
+    <string name="g_question3_option4">В районе Полоцка</string>
+    <string name="g_question3_correct_answer">В верхнем и среднем течении реки Неман</string>
 
-    <string name="g_question4_title">Какое государство имеет наибольшее количество соседей?</string>
-    <string name="g_question4_option1">Россия</string>
-    <string name="g_question4_option2">Бразилия</string>
-    <string name="g_question4_option3">Китай</string>
-    <string name="g_question4_option4">Индия</string>
-    <string name="g_question4_correct_answer">Китай</string>
+    <string name="g_question4_title">Какие факторы способствовали возвышению Новогрудского княжества? (2 варианта)</string>
+    <string name="g_question4_option1">Высокий уровень развития сельского хозяйства</string>
+    <string name="g_question4_option2">Близость к центру борьбы с монголо-татарами</string>
+    <string name="g_question4_option3">Отдаленность от района борьбы</string>
+    <string name="g_question4_option4">Развитие ремесла и торговли</string>
+    <string name="g_question4_correct_answer">Высокий уровень развития сельского хозяйства, Развитие ремесла и торговли</string>
 
-    <string name="g_question5_title">Какой город является столицей Японии?</string>
-    <string name="g_question5_option1">Осака</string>
-    <string name="g_question5_option2">Токио</string>
-    <string name="g_question5_option3">Киото</string>
-    <string name="g_question5_option4">Хиросима</string>
-    <string name="g_question5_correct_answer">Токио</string>
+    <string name="g_question5_title">Кто стал первым великим князем ВКЛ?</string>
+    <string name="g_question5_option1">Миндовг</string>
+    <string name="g_question5_option2">Гедимин</string>
+    <string name="g_question5_option3">Витень</string>
+    <string name="g_question5_option4">Рогволод</string>
+    <string name="g_question5_correct_answer">Миндовг</string>
 
-    <string name="g_question6_title">Какое море считается самым соленым на планете?</string>
-    <string name="g_question6_option1">Красное</string>
-    <string name="g_question6_option2">Балтийское</string>
-    <string name="g_question6_option3">Мертвое</string>
-    <string name="g_question6_option4">Карибское</string>
-    <string name="g_question6_correct_answer">Мертвое</string>
+    <string name="g_question6_title">Какое важное событие произошло в Новогрудке в 1253 году?</string>
+    <string name="g_question6_option1">Образование Великого княжества Литовского</string>
+    <string name="g_question6_option2">Принятие христианства Миндовгом</string>
+    <string name="g_question6_option3">Коронация Миндовга</string>
+    <string name="g_question6_option4">Присоединение белорусских земель</string>
+    <string name="g_question6_correct_answer">Коронация Миндовга</string>
 
-    <string name="g_question7_title">Какой остров крупнейший в мире?</string>
-    <string name="g_question7_option1">Гренландия</string>
-    <string name="g_question7_option2">Новая Гвинея</string>
-    <string name="g_question7_option3">Борнео</string>
-    <string name="g_question7_option4">Мадагаскар</string>
-    <string name="g_question7_correct_answer">Гренландия</string>
+    <string name="g_question7_title">Что сделал князь Витень для укрепления ВКЛ?</string>
+    <string name="g_question7_option1">Создал герб «Погоня»</string>
+    <string name="g_question7_option2">Присоединил западные земли Литвы</string>
+    <string name="g_question7_option3">Установил княжескую печать</string>
+    <string name="g_question7_option4">Начал летописание</string>
+    <string name="g_question7_correct_answer">Создал герб «Погоня», Установил княжескую печать</string>
 
-    <string name="g_question8_title">Какая река является самой длинной в мире?</string>
-    <string name="g_question8_option1">Нил</string>
-    <string name="g_question8_option2">Амазонка</string>
-    <string name="g_question8_option3">Янцзы</string>
-    <string name="g_question8_option4">Миссисипи</string>
-    <string name="g_question8_correct_answer">Амазонка</string>
+    <string name="g_question8_title">Какой титул носил князь Гедимин?</string>
+    <string name="g_question8_option1">Король Литвы и Руси</string>
+    <string name="g_question8_option2">Великий князь Литовский</string>
+    <string name="g_question8_option3">Князь Новогрудка</string>
+    <string name="g_question8_option4">Князь Жемайтии</string>
+    <string name="g_question8_correct_answer">Король Литвы и Руси</string>
 
-    <string name="g_question9_title">Какая пустыня является самой большой в мире?</string>
-    <string name="g_question9_option1">Сахара</string>
-    <string name="g_question9_option2">Гоби</string>
-    <string name="g_question9_option3">Калахари</string>
-    <string name="g_question9_option4">Атакама</string>
-    <string name="g_question9_correct_answer">Сахара</string>
+    <string name="g_question9_title">Как изменилось название государства при территориальном росте?</string>
+    <string name="g_question9_option1">Великое Княжество Литовское</string>
+    <string name="g_question9_option2">Великое Княжество Литовское, Русское и Жемайтское</string>
+    <string name="g_question9_option3">Литовское княжество</string>
+    <string name="g_question9_option4">Великое княжество Новогрудское</string>
+    <string name="g_question9_correct_answer">Великое Княжество Литовское, Русское и Жемайтское</string>
 
-    <string name="g_question10_title">Какой город расположен на двух континентах?</string>
-    <string name="g_question10_option1">Москва</string>
-    <string name="g_question10_option2">Стамбул</string>
-    <string name="g_question10_option3">Каир</string>
-    <string name="g_question10_option4">Тбилиси</string>
-    <string name="g_question10_correct_answer">Стамбул</string>
+    <string name="g_question10_title">Какие земли были объединены Миндовгом для образования ВКЛ? (2 варианта)</string>
+    <string name="g_question10_option1">Литовские земли</string>
+    <string name="g_question10_option2">Белорусские земли</string>
+    <string name="g_question10_option3">Американские земли</string>
+    <string name="g_question10_option4">Новогрудские земли</string>
+    <string name="g_question10_correct_answer">Литовские земли, Белорусские земли</string>
 
+    <string name="ticket1_title">Изучение первого билета</string>
+    <string name="ticket2_title">Изучение второго билета</string>
+    <string name="ticket3_title">Изучение третьего билета</string>
+    <string name="ticket4_title">Изучение четвертого билета</string>
+    <string name="ticket1_text">1. Три периодa первобытного строя: каменный, бронзовый и железный века. Кроманьонцы–первобытный человек — 40–35 тыс. лет назад. Приспособились к жизни в холодном климате. Расселялись на юге Беларуси. 2. Кaменный век закончился в конце 3-го тысячелетия до н. э. Достижения: освоение огня, изобретение остроконечных орудий. Занимались собирательством корней, охотой на мамонтов, северных оленей. Было присваивающее хозяйство: брали от природы всё в готовом виде. Переходили к оседлому образу жизни. Орудия труда делали из кремня. Жили родовыми общинами (во главе старейшины). Роды объединялись в племена. Был матриархат. 3. Бронзовый век — со 2-го тысячелетия до н. э. до VIII в. до н. э. Изделия из меди и бронзы попадали с юга на терр. Беларуси. Переход к производящему хозяйству. Вначале земледелие было мотыжным, затем подсечно-огневым. Высекали лес, сжигали пни; пепел был в качестве удобрения. На смену матриархату пришёл патриархат. Начали проникать индоевропейцы. 4. Железный век с VII в. до н. э. Научились добывать железную руду. Развивалось пашенное земледелие. Лишние продукты — имущественное неравенство. Появились богатые и бедные — происходили стычки. Для защиты строили городища. 5. Не могли объяснить природные явления → вера в сверхъестественные силы природы, сущ. души и в ее бессмертие. Возникли похоронные обряды. Обычай насыпать над могилами курганы. Примеры искусства: скульптура, женские уkрашения, музыкальные инструменты.</string>
+    <string name="ticket2_text">1. В конце IX в. возникает Киевская Русь-древнерусское госуд восточных славян. Территория Беларуси-западные земли Киевской Руси. Госуд образование восточных славян-Полоцкая земля-княжество. Центр–г. Полоцк. 1 полоцким князем-Рогволод-отказал в согласии на брак дочери Рогнеды с князем Владимиром-отомстил-Полоцк был взят и сожжен. Рогнеда насильно взята в жены Владимиром. Владимир-великий князем киевским- принятие в 988 г. новой религии-христианства. Горислава-новое имя Рогнеды- решилась убить его- покушение не удалось- должны были казнить. Защитил малолетний сын Изяслав – после выслали Рогнеду с Изяславом в Полоцкое княжество. Рогнеда пошла в монахини под именем Анастасия-княжна с тремя именами. Изяслав-князь-книжник, распространявший грамоту вместе с христианством в Полоцке. 2. В XI в Усиление Полоцкого княжества. Его сын Брячислав захватил волоки Новгорода. Сын Брячислава - Всеслав-прозван Чародеем. Более 50 лет князь правил Полоцкой землей-достигла наивысшего подъема. Всеслав захватил и разграбил Новгород. В ответ в 1067 г. напали на Минск. 3 марта - битва на реке Немиге. Город был сожжен. 3. Власть князя сочеталась с наличием вече - общего собрания взрослых мужчин. Обязанности князя: командование войском, сбор дани с населения. Действовали законы- «правда». Сборник «Русская правда». -доказательство вины зависит от «суда Божьего». Суд правил князь. 4. Туровское княжество (на территории Полесья). Центр – г. Туров, впервые упоминающийся в 980 г. Подчинялось старшему сыну Киевского князя. В середине XII в. в Турове установилась самостоятельная княжеская династия. Крупный город Пинск. Располагался на важном водном пути из Киева в Польшу. Пинск возвысился над Туровом. В период феодальной раздробленности Туровское княжество распадётся на мелкие княжества.</string>
+    <string name="ticket3_text">1. С X в. - распространение христианской веры на бел. землях. В 992 г. князь Изяслав основал епархию. С IX по XIII в. Христианство с язычеством существовали вместе. 2. Развивалась письменность. Берестяные грамоты-березовая кора с нацарапанными буквами. С X в. -летописание- запись событий по годам в хронологическом порядке. В XII в. - «Повесть временных лет» - летопись со сведениями о Рогнеде, Изяславе, о битве на Немиге и др. Туровское евангелие - первая рукопис. книга на тер. Беларуси. Материал -пергамент. Обложка-две дощечки, обтянутые кожей. 3. Религиозные деятели XII в. распространяли письменность. 12-летняя Предслава убежала из дому в женский монастырь- имя Евфросиния-женский и мужской монастыри. Первая святая женщина среди восточных славян. Епископ Кирилл-в небольшой монастырской башне-отшельник. Писал обращения к верующим, молитвы-исповеди. Прозвали Златоустом. 4. Важный памятник-Софийский собор. Слово «София» означает «Божья мудрость». Использовался плоский кирпич. Внутренняя часть храма - фресками. Частично сохранилась Коложская церковь. Особенность -большое количество глиняных кувшинов, встроенные в стены - хорошо слышно молитву.5. Шедевр древнего искусства - шестиконечный крест, по заказу Евфросинии Полоцкой в 1161 г. Крест из дерева. Поверхность – золотые пластины, а стороны -серебряными пластинами. Считается христианской реликвией белорусов.</string>
+    <string name="ticket4_text">1. ВКЛ появляется на полит карте Европы в XIII в. Причины: организация обороны от рыцарей-крестоносцев и монголо-татар; преодоление феодальной раздробленности. Эконом условия были связаны с отделением ремесла от с/х и развитием торговых отношений между разными территориями. 2. Основные события образования ВКЛ -в верхнем и среднем течении р. Неман. В середине XIII в. произошло возвышение Новогрудского княжества. Способствовали его удаленность от района борьбы, высокий уровень развития с/х, ремесла и торговли. Летопись сообщает о Литве Миндовга, одного из местных балтских князей, направился в Новогрудок. Принял христианство и сделал город своей резиденцией. В Новогрудке в 1253 г. состоялась коронация Миндовга. Он был в 1230-е - 1263 г. великим князем государства, начало которому положило объединение литовских, части белорусских и новогрудских земель. Потом великим князем стал Витень, сделал себе герб и всему княжеству Литовскому печать – «Погоня». Удалось достигнуть единства нового государства. 3. Происхождение названия княжества связано с его территориальным ростом. При князе Гедимине в 1316—1341 гг. возросла роль князя. Его титул стал звучать так: «король Литвы и Руси». В результате государство получило название «ВКЛ и Русское». Когда была присоединена западная часть Литвы, получило полное название — Великое Княжество Литовское, Русское и Жемайтское.</string>
 </resources>

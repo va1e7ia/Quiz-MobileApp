@@ -18,7 +18,7 @@ public class QuestionsBank {
                 context.getString(R.string.question1_option3),
                 context.getString(R.string.question1_option4),
                 context.getString(R.string.question1_correct_answer),
-                true
+                false
         ));
 
         questionsList.add(new QuestionsList(
@@ -38,7 +38,7 @@ public class QuestionsBank {
                 context.getString(R.string.question3_option3),
                 context.getString(R.string.question3_option4),
                 context.getString(R.string.question3_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -58,7 +58,7 @@ public class QuestionsBank {
                 context.getString(R.string.question5_option3),
                 context.getString(R.string.question5_option4),
                 context.getString(R.string.question5_correct_answer),
-                true
+                false
         ));
 
         questionsList.add(new QuestionsList(
@@ -68,7 +68,7 @@ public class QuestionsBank {
                 context.getString(R.string.question6_option3),
                 context.getString(R.string.question6_option4),
                 context.getString(R.string.question6_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -78,7 +78,7 @@ public class QuestionsBank {
                 context.getString(R.string.question7_option3),
                 context.getString(R.string.question7_option4),
                 context.getString(R.string.question7_correct_answer),
-                true
+                false
         ));
 
         questionsList.add(new QuestionsList(
@@ -88,7 +88,7 @@ public class QuestionsBank {
                 context.getString(R.string.question8_option3),
                 context.getString(R.string.question8_option4),
                 context.getString(R.string.question8_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -98,7 +98,7 @@ public class QuestionsBank {
                 context.getString(R.string.question9_option3),
                 context.getString(R.string.question9_option4),
                 context.getString(R.string.question9_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -108,7 +108,7 @@ public class QuestionsBank {
                 context.getString(R.string.question10_option3),
                 context.getString(R.string.question10_option4),
                 context.getString(R.string.question10_correct_answer),
-                false
+                true
         ));
 
         return questionsList;
@@ -145,7 +145,7 @@ public class QuestionsBank {
                 context.getString(R.string.f_question3_option3),
                 context.getString(R.string.f_question3_option4),
                 context.getString(R.string.f_question3_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -155,7 +155,7 @@ public class QuestionsBank {
                 context.getString(R.string.f_question4_option3),
                 context.getString(R.string.f_question4_option4),
                 context.getString(R.string.f_question4_correct_answer),
-                true
+                false
         ));
 
         questionsList.add(new QuestionsList(
@@ -165,7 +165,7 @@ public class QuestionsBank {
                 context.getString(R.string.f_question5_option3),
                 context.getString(R.string.f_question5_option4),
                 context.getString(R.string.f_question5_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -175,7 +175,7 @@ public class QuestionsBank {
                 context.getString(R.string.f_question6_option3),
                 context.getString(R.string.f_question6_option4),
                 context.getString(R.string.f_question6_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -185,7 +185,7 @@ public class QuestionsBank {
                 context.getString(R.string.f_question7_option3),
                 context.getString(R.string.f_question7_option4),
                 context.getString(R.string.f_question7_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -205,7 +205,7 @@ public class QuestionsBank {
                 context.getString(R.string.f_question9_option3),
                 context.getString(R.string.f_question9_option4),
                 context.getString(R.string.f_question9_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -215,7 +215,7 @@ public class QuestionsBank {
                 context.getString(R.string.f_question10_option3),
                 context.getString(R.string.f_question10_option4),
                 context.getString(R.string.f_question10_correct_answer),
-                false
+                true
         ));
 
         return questionsList;
@@ -252,7 +252,7 @@ public class QuestionsBank {
                 context.getString(R.string.m_question3_option3),
                 context.getString(R.string.m_question3_option4),
                 context.getString(R.string.m_question3_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -292,7 +292,7 @@ public class QuestionsBank {
                 context.getString(R.string.m_question7_option3),
                 context.getString(R.string.m_question7_option4),
                 context.getString(R.string.m_question7_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -302,7 +302,7 @@ public class QuestionsBank {
                 context.getString(R.string.m_question8_option3),
                 context.getString(R.string.m_question8_option4),
                 context.getString(R.string.m_question8_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -312,7 +312,7 @@ public class QuestionsBank {
                 context.getString(R.string.m_question9_option3),
                 context.getString(R.string.m_question9_option4),
                 context.getString(R.string.m_question9_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -322,7 +322,7 @@ public class QuestionsBank {
                 context.getString(R.string.m_question10_option3),
                 context.getString(R.string.m_question10_option4),
                 context.getString(R.string.m_question10_correct_answer),
-                false
+                true
         ));
 
         return questionsList;
@@ -349,7 +349,7 @@ public class QuestionsBank {
                 context.getString(R.string.g_question2_option3),
                 context.getString(R.string.g_question2_option4),
                 context.getString(R.string.g_question2_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -369,7 +369,7 @@ public class QuestionsBank {
                 context.getString(R.string.g_question4_option3),
                 context.getString(R.string.g_question4_option4),
                 context.getString(R.string.g_question4_correct_answer),
-                false
+                true
         ));
 
         questionsList.add(new QuestionsList(
@@ -429,7 +429,7 @@ public class QuestionsBank {
                 context.getString(R.string.g_question10_option3),
                 context.getString(R.string.g_question10_option4),
                 context.getString(R.string.g_question10_correct_answer),
-                false
+                true
         ));
 
         return questionsList;

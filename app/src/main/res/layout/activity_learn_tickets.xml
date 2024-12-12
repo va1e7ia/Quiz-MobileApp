@@ -1,106 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/logoutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logout_btn"/>
-    <TextView
-        android:id="@+id/usernameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"
-        android:text="Привет, пользователь!"
-        android:layout_marginLeft="100dp"/>
-
-
-
-    <!-- КНОПКА УЧИТЬ БИЛЕТЫ -->
+    tools:context=".LearnTicketsActivity">
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/learnTicketsBtn"
-        android:layout_width="match_parent"
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="учить билеты"
-        android:layout_above="@id/quizText"
-        android:layout_centerHorizontal="true"
+        android:text="назад"
         android:textColor="#CC000000"
         android:textStyle="bold"
         android:textSize="16sp"
         android:background="@drawable/round_back_green"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="55dp"/>
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"/>
 
-
-
-    <!--ИЗОБРАЖЕНИЕ ВИКТОРИНЫ -->
-    <ImageView
-        android:id="@+id/quizIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-20dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/quiz"
-        android:contentDescription="@string/quiz_icon_description" />
 
     <TextView
-        android:id="@+id/infoText"
+        android:id="@+id/chooseTicket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/quizIcon"
-        android:textColor="#99FFFFFF"
-        android:layout_marginTop="-55dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="20dp"
-        android:text="Информация:\n1) перед прохождением тестов рекомендуется прочитать билеты\n2) на каждый вопрос вам дается 30 секунд времени\n3) внимательно читайте вопросы"
-        />
-
-
-    <!--ВЫБЕРИТЕ ВИКТОРИНУ -->
-    <TextView
-        android:id="@+id/quizText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/quizIcon"
         android:textColor="#99FFFFFF"
         android:layout_marginTop="70dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="20dp"
-        android:text="Выберите билет:"
+        android:text="Выберите билет для изучения:"
         />
-
 
     <!--НАЧАЛО ПЕРВОЙ ЛИНИИ -->
     <LinearLayout
-        android:id="@+id/line_1"
+        android:id="@+id/line_1_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/quizText"
+
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:weightSum="2"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:layout_below="@+id/chooseTicket">
 
-        <!--1 билет -->
+        <!--ОБЩАЯ ЭРУДИЦИЯ -->
         <LinearLayout
-            android:id="@+id/generalEruditionLayout"
+            android:id="@+id/learn_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -121,14 +68,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/general_erudition"
+                android:text="1 билет"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
         </LinearLayout>
-        <!--2 билет -->
+        <!--КИНО И ТЕЛЕВИДЕНИЕ -->
         <LinearLayout
-            android:id="@+id/filmLayout"
+            android:id="@+id/learn_2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -149,30 +96,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/film"
+                android:text="2 билет"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
-    <!--КОНЕЦ ПЕРВОЙ ЛИНИИ -->
 
     <!--НАЧАЛО ВТОРОЙ ЛИНИИ -->
     <LinearLayout
-        android:id="@+id/line_2"
+        android:id="@+id/line_2_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:layout_below="@+id/line_1"
+        android:layout_below="@+id/line_1_2"
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:weightSum="2">
 
-        <!--3 билет -->
+        <!--МУЗЫКА -->
         <LinearLayout
-            android:id="@+id/musicLayout"
+            android:id="@+id/learn_3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -193,14 +139,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/music"
+                android:text="3 билет"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
         </LinearLayout>
-        <!--4 билет -->
+        <!--ГЕОГРАФИЯ -->
         <LinearLayout
-            android:id="@+id/geographyLayout"
+            android:id="@+id/learn_4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -221,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/geography"
+                android:text="4 билет"
                 android:textColor="#CC000000"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -229,21 +175,22 @@
     </LinearLayout>
     <!--КОНЕЦ ВТОРОЙ ЛИНИИ-->
 
+
     <!-- КНОПКА НАЧАТЬ ВИКТОРИНУ -->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/startQuizBtn"
+        android:id="@+id/startTicket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="начать прохождение теста"
-        android:layout_below="@id/line_2"
+        android:text="Начать изучение"
         android:layout_marginTop="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:textColor="#CC000000"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:background="@drawable/round_back_green"/>
-
+        android:background="@drawable/round_back_green"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"/>
 
 
 </RelativeLayout>
